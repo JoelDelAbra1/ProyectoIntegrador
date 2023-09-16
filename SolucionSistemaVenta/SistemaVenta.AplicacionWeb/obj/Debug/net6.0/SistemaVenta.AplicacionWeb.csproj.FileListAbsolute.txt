@@ -266,3 +266,5 @@ C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Auth.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Storage.dll
