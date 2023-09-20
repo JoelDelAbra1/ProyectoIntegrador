@@ -74,7 +74,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_creado);
 
                 gResponse.Estado = true;
-                gResponse.Object = vmUsuario;
+                gResponse.Objeto = vmUsuario;
 
 
             }
@@ -118,7 +118,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_editado);
 
                 gResponse.Estado = true;
-                gResponse.Object = vmUsuario;
+                gResponse.Objeto = vmUsuario;
 
 
             }

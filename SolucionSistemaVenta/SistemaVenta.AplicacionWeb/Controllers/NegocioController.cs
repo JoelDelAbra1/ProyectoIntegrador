@@ -38,9 +38,44 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                 VMNegocio vMNegocio = _mapper.Map<VMNegocio>(await _negocioService.Obtener());
 
                 gResponse.Estado = true;
-                gResponse.Object = vMNegocio; // object o objeto
+                gResponse.Objeto = vMNegocio; // object o objeto
             }
             catch(Exception ex)
+            {
+                gResponse.Estado = false;
+                gResponse.Mensaje = ex.Message;
+            }
+            return StatusCode(StatusCodes.Status200OK, gResponse);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> GuardarCambios([FromForm]IFormFile logo, [FromForm] string modelo)
+        {
+            GenericResponse<VMNegocio> gResponse = new GenericResponse<VMNegocio>();
+            try
+            {
+                VMNegocio vMNegocio =JsonConvert.DeserializeObject<VMNegocio>(modelo);
+
+                string nombreLogo = "";
+                Stream logoStream = null;
+
+                if(logo != null)
+                {
+                    string nombre_en_codigo = Guid.NewGuid().ToString("N");
+                    string extencion = Path.GetExtension(logo.FileName);
+                    nombreLogo = string.Concat(nombre_en_codigo, extencion);
+                    logoStream = logo.OpenReadStream();
+
+                    Negocio negocio_editado = await _negocioService.GuardarCambios(_mapper.Map<Negocio>(vMNegocio), logoStream , nombreLogo);
+
+                    vMNegocio = _mapper.Map<VMNegocio>(negocio_editado);
+                }
+
+                gResponse.Estado = true;
+                gResponse.Objeto = vMNegocio; // object o objeto
+            }
+            catch (Exception ex)
             {
                 gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;
