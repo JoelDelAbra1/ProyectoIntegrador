@@ -73,7 +73,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_creado);
 
-                gResponse.Estaado = true;
+                gResponse.Estado = true;
                 gResponse.Object = vmUsuario;
 
 
@@ -81,7 +81,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             catch (Exception ex)
             {
 
-                gResponse.Estaado = false;
+                gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;
 
 
@@ -117,7 +117,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
                 vmUsuario = _mapper.Map<VMUsuario>(usuario_editado);
 
-                gResponse.Estaado = true;
+                gResponse.Estado = true;
                 gResponse.Object = vmUsuario;
 
 
@@ -125,7 +125,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             catch (Exception ex)
             {
 
-                gResponse.Estaado = false;
+                gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;
 
 
@@ -142,12 +142,12 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
             try
             {
-                gResponse.Estaado = await _usuarioServicio.Eliminar(IdUsuario);
+                gResponse.Estado = await _usuarioServicio.Eliminar(IdUsuario);
 
 
             } catch (Exception ex)
             {
-                gResponse.Estaado = false;
+                gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;
             }
             return StatusCode(StatusCodes.Status200OK, gResponse);

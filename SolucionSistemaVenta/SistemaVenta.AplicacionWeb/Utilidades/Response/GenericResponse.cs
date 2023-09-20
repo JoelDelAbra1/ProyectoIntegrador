@@ -2,7 +2,7 @@
 {
     public class GenericResponse<TObject>
     {
-        public bool Estaado { get; set; }
+        public bool Estado { get; set; }
 
         public string? Mensaje { get; set; } // ? perimite nulos
 

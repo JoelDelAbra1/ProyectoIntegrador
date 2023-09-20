@@ -7018,11 +7018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
       "projectName": "SistemaVenta.BLL",
-      "projectPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
       "packagesPath": "C:\\Users\\joeld\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\obj\\",
+      "outputPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joeld\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7039,11 +7039,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
-              "projectPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
+            "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
+              "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
             },
-            "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
-              "projectPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
+            "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
+              "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
             }
           }
         }
