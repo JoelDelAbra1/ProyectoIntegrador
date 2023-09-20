@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SolucionSistemaVenta"
+    "\\SolucionSistemaVenta",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\Controllers",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\Views",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js",
+    "\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js\\vistas",
+    "\\SolucionSistemaVenta\\SistemaVenta.BLL",
+    "\\SolucionSistemaVenta\\SistemaVenta.BLL\\Interfaces"
   ],
-  "SelectedNode": "\\SolucionSistemaVenta\\SolucionSistemaVenta.sln",
   "PreviewInSolutionExplorer": false
 }
