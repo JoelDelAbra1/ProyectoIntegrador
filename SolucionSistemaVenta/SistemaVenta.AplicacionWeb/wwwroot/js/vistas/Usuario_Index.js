@@ -23,7 +23,7 @@ $(document).ready(function () {
             if (responseJson.length > 0) {
                 responseJson.forEach((item) => {
                     $("#cboRol").append(
-                        $("option>").val(item.idRol).text(item.descripcion)
+                        $("<option>").val(item.idRol).text(item.descripcion)
                     )
                 })
             }
@@ -84,7 +84,7 @@ $(document).ready(function () {
             url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
         },
     });
-})
+
 
 
 function mostrarModal(modelo = MODELO_BASE) {
@@ -98,15 +98,15 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#imgUsuario").attr("src", modelo.urlFoto)
 
 
-    $("modalData").modal("show")
+    $("#modalData").modal("show")
 
 }
 
-$("$btnNuevo").click(function () {
+$("#btnNuevo").click(function () {
     mostrarModal()
 })
 
-$("$btnGuardar").click(function () {
+$("#btnGuardar").click(function () {
 
     debugger;
 
@@ -264,3 +264,4 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
     )
 })
 
+})

@@ -55,3 +55,22 @@ C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSiste
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\refint\SistemaVenta.IOC.dll
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.pdb
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\ref\SistemaVenta.IOC.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.deps.json
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.IOC.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.BLL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.DAL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.Entity.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.BLL.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.DAL.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\bin\Debug\net6.0\SistemaVenta.Entity.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.csproj.AssemblyReference.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.AssemblyInfoInputs.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.AssemblyInfo.cs
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.csproj.CoreCompileInputs.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.csproj.CopyComplete
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\refint\SistemaVenta.IOC.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\SistemaVenta.IOC.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.IOC\obj\Debug\net6.0\ref\SistemaVenta.IOC.dll

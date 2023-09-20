@@ -43,3 +43,18 @@ C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSiste
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\refint\SistemaVenta.DAL.dll
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.pdb
 C:\Users\Brian Rojano\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\ref\SistemaVenta.DAL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\bin\Debug\net6.0\SistemaVenta.DAL.deps.json
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\bin\Debug\net6.0\SistemaVenta.DAL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\bin\Debug\net6.0\SistemaVenta.DAL.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\bin\Debug\net6.0\SistemaVenta.Entity.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\bin\Debug\net6.0\SistemaVenta.Entity.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.csproj.AssemblyReference.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.AssemblyInfoInputs.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.AssemblyInfo.cs
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.csproj.CoreCompileInputs.cache
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.csproj.CopyComplete
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\refint\SistemaVenta.DAL.dll
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\SistemaVenta.DAL.pdb
+C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.DAL\obj\Debug\net6.0\ref\SistemaVenta.DAL.dll
