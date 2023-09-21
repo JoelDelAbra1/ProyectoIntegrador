@@ -222,7 +222,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
 
     const data = tablaData.row(fila).data();
 
-    swall({
+    swal({
         title: "¿Estás seguro?",
         text: `Eliminar el usuario "${data.nombre}"`,
         type: "warning",
@@ -233,7 +233,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
         closeOnConfirm: false,
         closeOnCancel:true
     },
-        function (respuestaa) {
+        function (respuesta) {
 
             if (respuesta) {
                 $(".showSweetAlert").LoadingOverlay("show");

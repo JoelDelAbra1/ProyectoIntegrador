@@ -23,17 +23,17 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         {
             return View();
 
-            
         }
+
         [HttpGet]
         public async Task<IActionResult> Lista()
         {
-            List<VMCategoria> vmCategoriaLista =_mapper.Map<List<VMCategoria>>( await _categoriaServicio.Lista());
+            List<VMCategoria> vmCategoriaLista = _mapper.Map<List<VMCategoria>>(await _categoriaServicio.Lista());
             return StatusCode(StatusCodes.Status200OK, new { data = vmCategoriaLista });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Crear([FromBody]VMCategoria modelo)
+        public async Task<IActionResult> Crear([FromBody] VMCategoria modelo)
         {
             GenericResponse<VMCategoria> gResponse = new GenericResponse<VMCategoria>();
 
@@ -44,7 +44,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                 gResponse.Estado = true;
                 gResponse.Objeto = modelo;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;
@@ -78,9 +78,9 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             GenericResponse<string> gResponse = new GenericResponse<string>();
             try
             {
-                gResponse.Estado= await _categoriaServicio.Eliminar(idCategoria);
+                gResponse.Estado = await _categoriaServicio.Eliminar(idCategoria);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 gResponse.Estado = false;
                 gResponse.Mensaje = ex.Message;

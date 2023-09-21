@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\joeld\source\repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.AplicacionWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/joeld/source/repos/ProyectoIntegrador2/SolucionSistemaVenta/SistemaVenta.AplicacionWeb/Views/Categorias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
+[C:/Users/joeld/source/repos/ProyectoIntegrador2/SolucionSistemaVenta/SistemaVenta.AplicacionWeb/Views/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/joeld/source/repos/ProyectoIntegrador2/SolucionSistemaVenta/SistemaVenta.AplicacionWeb/Views/DashBoard/Index.cshtml]

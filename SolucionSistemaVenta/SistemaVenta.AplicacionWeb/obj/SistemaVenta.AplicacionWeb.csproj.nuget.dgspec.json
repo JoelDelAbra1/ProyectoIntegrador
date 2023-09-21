@@ -165,7 +165,7 @@
         "projectName": "SistemaVenta.DAL",
         "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj",
         "packagesPath": "C:\\Users\\joeld\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\obj\\",
+        "outputPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeld\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -291,7 +291,7 @@
         "projectName": "SistemaVenta.IOC",
         "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.IOC\\SistemaVenta.IOC.csproj",
         "packagesPath": "C:\\Users\\joeld\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeld\\Source\\Repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.IOC\\obj\\",
+        "outputPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.IOC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joeld\\AppData\\Roaming\\NuGet\\NuGet.Config",
