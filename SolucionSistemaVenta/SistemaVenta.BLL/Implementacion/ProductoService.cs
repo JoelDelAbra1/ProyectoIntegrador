@@ -19,17 +19,17 @@ namespace SistemaVenta.BLL.Implementacion
         private readonly IFireBaseService _fireBaseServicio;
         private readonly IUtilidadesService _utilidadesServicio;
 
-        public ProductoService(IGenericRepository<Producto> repositorio,
-            IFireBaseService fireBaseServicio)
+        public ProductoService(IGenericRepository<Producto> repositorio,IFireBaseService fireBaseServicio, IUtilidadesService utilidadesServicio)
         {
             _fireBaseServicio = fireBaseServicio;
             _repositorio = repositorio;
+            _utilidadesServicio = utilidadesServicio;
         }
 
         public async Task<List<Producto>> Lista()
         {
             IQueryable<Producto> query = await _repositorio.Consultar();
-            return query.Include(c => c.IdCategoriaNavegation).ToList();
+            return query.Include(c => c.IdCategoriaNavigation).ToList();
         }
         public async Task<Producto> Crear(Producto entidad, Stream imagen = null, string NombreImagen = "")
         {
@@ -43,11 +43,11 @@ namespace SistemaVenta.BLL.Implementacion
                 entidad.NombreImagen = NombreImagen;
                 if (imagen != null)
                 {
-                    string urlImage = await _fireBaseServicio.SubirStorage(imagen, "carpeta_producto", NombreImagen)
+                    string urlImage = await _fireBaseServicio.SubirStorage(imagen, "carpeta_producto", NombreImagen);
                         entidad.UrlImagen = urlImage;
                 }
 
-                Producto producto = await _repositorio.Crear(entidad);
+                Producto producto_creado = await _repositorio.Crear(entidad);
 
                 if (producto_creado.IdProducto == 0)
 
@@ -55,10 +55,10 @@ namespace SistemaVenta.BLL.Implementacion
 
                 IQueryable<Producto> query = await _repositorio.Consultar(p => p.IdProducto == producto_creado.IdProducto);
 
-                producto_creado = query.Include(c =>.IdCategoriaNavigation).Firs();
+                producto_creado = query.Include(c =>c.IdCategoriaNavigation).First();
 
 
-                return producto_creado
+                return producto_creado;
 
             }
             catch (Exception ex)
@@ -70,14 +70,14 @@ namespace SistemaVenta.BLL.Implementacion
 
         public async Task<Producto> Editar(Producto entidad, Stream imagen = null)
         {
-            Producto producto_existe = await _repositorio.Obtener(p => p.CodigoBarra && p.IdProducto != entidad.IdProducto);
+            Producto producto_existe = await _repositorio.Obtener(p => p.CodigoBarra == entidad.CodigoBarra && p.IdProducto != entidad.IdProducto);
 
             if (producto_existe != null)
                 throw new TaskCanceledException("El codigo de barra ya existe");
 
             try
             {
-                IQueryable<Producto> queryProducto = await _repositorio.Consultar(p = p.IdProducto == entidad.IdProducto);
+                IQueryable<Producto> queryProducto = await _repositorio.Consultar(p => p.IdProducto == entidad.IdProducto);
 
                 Producto producto_para_editar = queryProducto.First();
 

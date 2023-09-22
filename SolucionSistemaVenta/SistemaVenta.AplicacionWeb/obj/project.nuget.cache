@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9EYpfy7nbQNtW2ABpyWUyKYygaWp1jvTsHQUir0sH99MTulX6sIZ4XWCQvzPajfuaZj288TJchhAzL+N0sO+tw==",
+  "dgSpecHash": "ysCPE0FrtRxLHOVsZiwhxUKhXRuYJ8uwLubvgI1kqlFP3aCCX1ekcdHKw0ris5TNQmFTCzKIf09Pu+7Zl5D9Qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
+  "projectFilePath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\SistemaVenta.AplicacionWeb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joeld\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\joeld\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

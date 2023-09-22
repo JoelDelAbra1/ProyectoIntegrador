@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lrfR+Gx6WEsuq2KqgweJFoZ6VPZIK+Q+ZYud4ryL/u3n/WAwYsveN7wq3fBCLG4bPPajIZlqM43sm+Ir/siovA==",
+  "dgSpecHash": "Pq5QOkrcNcqh2Iz+c1xPItSxLxkc2xHF3gy8sZa8qsjb1RzE4+mT1dVYyOjT8zxkpngkxzP+y2jLO+152ABChA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador2\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj",
+  "projectFilePath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joeld\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joeld\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
