@@ -82,15 +82,20 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             try
             {
                 VMProducto vmProducto = JsonConvert.DeserializeObject<VMProducto>(modelo);
-               
+
+                string nombreImagen = "";
+                
                 Stream imagenStream = null;
 
                 if (imagen != null)
                 {
+                    string nombre_en_codigo = Guid.NewGuid().ToString("N");
+                    string extencion = Path.GetExtension(imagen.FileName);
+                    nombreImagen = string.Concat(nombre_en_codigo, extencion);
                     imagenStream = imagen.OpenReadStream();
                 }
 
-                Producto producto_editado = await _productoServicio.Editar(_mapper.Map<Producto>(vmProducto), imagenStream);
+                Producto producto_editado = await _productoServicio.Editar(_mapper.Map<Producto>(vmProducto), imagenStream, nombreImagen);
 
                 vmProducto = _mapper.Map<VMProducto>(producto_editado);
 
