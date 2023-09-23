@@ -18,8 +18,7 @@ namespace SistemaVenta.BLL.Implementacion
         private readonly IGenericRepository<Producto> _repositorioProducto;
         private readonly IVentaRepository _repositorioVenta;
 
-        public VentaService(IGenericRepository<Producto> repositorioProducto,
-            IVentaRepository repositorioVenta)
+        public VentaService(IGenericRepository<Producto> repositorioProducto, IVentaRepository repositorioVenta)
         {
             _repositorioProducto = repositorioProducto;
             _repositorioVenta = repositorioVenta;

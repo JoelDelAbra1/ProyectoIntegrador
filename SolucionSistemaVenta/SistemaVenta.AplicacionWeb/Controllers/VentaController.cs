@@ -53,7 +53,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ResgistrarVenta([FromBody] VMVenta modelo)
+        public async Task<IActionResult> RegistrarVenta([FromBody] VMVenta modelo)
         {
             GenericResponse<VMVenta> gResponse = new GenericResponse<VMVenta>();
 

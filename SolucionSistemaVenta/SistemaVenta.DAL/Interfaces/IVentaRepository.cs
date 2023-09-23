@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SistemaVenta.DAL.Interfaces
 {
-    public interface IVentaRepository
+    public interface IVentaRepository : IGenericRepository<Venta>
     {
-        Task<IQueryable<Venta>> Consultar(Func<object, bool> value);
+        
         Task<Venta> Registrar(Venta entidad);
         Task<List<DetalleVenta>>Reporte(DateTime FechaInicio, DateTime FechaFin);
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.EntityFrameworkCore;
 using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using SistemaVenta.Entity;
 
 namespace SistemaVenta.DAL.Implementacion
@@ -20,6 +20,12 @@ namespace SistemaVenta.DAL.Implementacion
         {
             _dbContext = dbContext;
         }
+
+        public Task<IQueryable<Venta>> Consultar(Func<object, bool> value)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Venta> Registrar(Venta entidad)
         {
             Venta ventaGenerada = new Venta();

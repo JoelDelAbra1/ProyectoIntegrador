@@ -90,7 +90,7 @@ $("#btnGuardar").click(function () {
     if (modelo.idCategoria == 0) {
         fetch("/Categoria/Crear", {
             method: "POST",
-            headers: {"Content-Type":"application/json;charset=utf-8"},
+            headers: {"Content-Type":"application/json; charset=utf-8" },
             body: JSON.stringify(modelo)
 
         })
