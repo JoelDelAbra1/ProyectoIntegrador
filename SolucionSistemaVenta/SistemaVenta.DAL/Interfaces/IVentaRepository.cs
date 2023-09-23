@@ -9,6 +9,7 @@ namespace SistemaVenta.DAL.Interfaces
 {
     public interface IVentaRepository
     {
+        Task<IQueryable<Venta>> Consultar(Func<object, bool> value);
         Task<Venta> Registrar(Venta entidad);
         Task<List<DetalleVenta>>Reporte(DateTime FechaInicio, DateTime FechaFin);
     }
