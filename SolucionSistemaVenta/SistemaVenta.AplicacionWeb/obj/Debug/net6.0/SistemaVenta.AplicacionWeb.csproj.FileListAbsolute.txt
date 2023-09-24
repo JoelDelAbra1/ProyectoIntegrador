@@ -1086,3 +1086,7 @@ C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVent
 C:\Users\joeld\Source\Repos\ProyectoIntegrador2\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\obj\Debug\net6.0\ref\SistemaVenta.AplicacionWeb.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dll
+C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dylib
+C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.so
+C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\DinkToPdf.dll
