@@ -19,14 +19,14 @@ const VISTA_BUSQUEDA ={
         $(".busqueda-venta").Show()
 }
 
-$(document).deady(function(){
+$(document).ready(function(){
     VISTA_BUSQUEDA["busquedaFecha"]()
 
     $.datepicker.setDefaults($.datepicker.regional["es"])
 
      $("#txtFechaInicio").datepicker({dateFormat: "dd/mm/yy"})
      $("#txtFechaFin").datepicker({dateFormat: "dd/mm/yy"})
-}
+})
 
 $("#cboBuscarPor").change(function(){
     
