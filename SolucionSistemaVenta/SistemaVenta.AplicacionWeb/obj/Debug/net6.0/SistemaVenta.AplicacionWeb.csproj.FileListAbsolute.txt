@@ -1090,3 +1090,7 @@ C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dylib
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.so
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\DinkToPdf.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.dylib
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Utilidades\LibreriaPDF\libwkhtmltox.so
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\DinkToPdf.dll

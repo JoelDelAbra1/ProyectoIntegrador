@@ -7013,19 +7013,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cegar\\.nuget\\packages\\": {}
+    "C:\\Users\\joeld\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "projectUniqueName": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
       "projectName": "SistemaVenta.BLL",
-      "projectPath": "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
-      "packagesPath": "C:\\Users\\cegar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\obj\\",
+      "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\SistemaVenta.BLL.csproj",
+      "packagesPath": "C:\\Users\\joeld\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.BLL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cegar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joeld\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7039,11 +7039,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
-              "projectPath": "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
+            "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj": {
+              "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.DAL\\SistemaVenta.DAL.csproj"
             },
-            "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
-              "projectPath": "C:\\Users\\cegar\\Source\\Repos\\JoelDelAbra1\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
+            "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj": {
+              "projectPath": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.Entity\\SistemaVenta.Entity.csproj"
             }
           }
         }
@@ -7083,7 +7083,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
