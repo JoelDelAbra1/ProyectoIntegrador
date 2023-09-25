@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VQIL9kfX3R1gFw1Wh69HPZIFefsTC6YpiTR2C/xk8Zg=",
+  "Hash": "Ai4R/NTqvD8qeyfanxGefDGKNCs+9g6JPGPMT/2tTGk=",
   "Source": "SistemaVenta.AplicacionWeb",
   "BasePath": "_content/SistemaVenta.AplicacionWeb",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\vistas\\chart-pie-demo.js"
+    },
+    {
+      "Identity": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js\\vistas\\DashBoard_Index.js",
+      "SourceId": "SistemaVenta.AplicacionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\",
+      "BasePath": "_content/SistemaVenta.AplicacionWeb",
+      "RelativePath": "js/vistas/DashBoard_Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\vistas\\DashBoard_Index.js"
     },
     {
       "Identity": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js\\vistas\\datatables-demo.js",
