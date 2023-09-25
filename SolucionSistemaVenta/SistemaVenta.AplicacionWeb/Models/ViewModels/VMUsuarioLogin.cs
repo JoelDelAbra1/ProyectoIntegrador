@@ -9,7 +9,7 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 
         public string? Clave { get; set; }
 
-        public bool? MantenerSesion { get; set; }
+        public bool MantenerSesion { get; set; }
     }
 }
 

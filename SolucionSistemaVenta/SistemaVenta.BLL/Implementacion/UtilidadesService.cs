@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
 using System.Threading.Tasks;
 using SistemaVenta.BLL.Interfaces;
 using System.Security.Cryptography;
 using System.Globalization;
+
+using System.Text;
 
 namespace SistemaVenta.BLL.Implementacion
 {
