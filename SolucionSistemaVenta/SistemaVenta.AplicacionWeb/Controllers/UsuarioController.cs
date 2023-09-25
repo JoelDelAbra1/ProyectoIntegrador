@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
+
 using AutoMapper;
 using Newtonsoft.Json;
 using SistemaVenta.AplicacionWeb.Models.ViewModels;
@@ -23,6 +25,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             _mapper = mapper;
 
         }
+
         public IActionResult Index()
         {
             return View();
@@ -32,6 +35,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
         [HttpGet]
         public async Task<IActionResult> ListaRoles()
         {
+            
             List<VMRol> vmListaRoles = _mapper.Map<List<VMRol>>(await _rolServicio.Lista());
             return StatusCode(StatusCodes.Status200OK, vmListaRoles);
 

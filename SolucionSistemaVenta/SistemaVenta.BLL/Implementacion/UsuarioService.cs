@@ -21,7 +21,7 @@ namespace SistemaVenta.BLL.Implementacion
         private readonly ICorreoService _correoService;
 
         public UsuarioService(
-            IGenericRepository<Usuario> repositorio,
+         IGenericRepository<Usuario> repositorio,
         IFireBaseService fireBaseService,
         IUtilidadesService utilidadesService,
         ICorreoService correoService
@@ -42,7 +42,7 @@ namespace SistemaVenta.BLL.Implementacion
         public async Task<Usuario> Crear(Usuario entidad, Stream Foto = null, string NombreFoto = "", string UrlPlantillaCorreo = "")
         {
 
-            Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == u.Correo);
+            Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == entidad.Correo);
 
             if (usuario_existe != null)
                 throw new TaskCanceledException("El correo ya existe");
@@ -109,7 +109,7 @@ namespace SistemaVenta.BLL.Implementacion
 
         public  async Task<Usuario> Editar(Usuario entidad, Stream Foto = null, string NombreFoto = "")
         {
-            Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == u.Correo && u.IdUsuario != entidad.IdUsuario);
+            Usuario usuario_existe = await _repositorio.Obtener(u => u.Correo == entidad.Correo && u.IdUsuario != entidad.IdUsuario);
 
             if (usuario_existe != null)
                 throw new TaskCanceledException("El correo ya existe");
@@ -135,7 +135,7 @@ namespace SistemaVenta.BLL.Implementacion
 
                 bool respuesta = await _repositorio.Editar(usuario_editar);
 
-                if (respuesta)
+                if (!respuesta)
                     throw new TaskCanceledException("No se pudo modificar el usuario");
 
                 Usuario usuario_editado = queryUsuario.Include(r => r.IdRolNavigation).First();

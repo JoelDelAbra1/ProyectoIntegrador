@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     fetch("/Usuario/ListaRoles")
         .then(response => {
-            return response.ok ? response.json(): Promise.reject(response);
+            return response.ok ? response.json() : Promise.reject(response);
 
         })
         .then(responseJson => {
@@ -33,41 +33,41 @@ $(document).ready(function () {
 
     tablaData = $('#tbdata').DataTable({
         responsive: true,
-         "ajax": {
-             "url": '/Usuario/Lista',
-             "type": "GET",
-             "datatype": "json"
-         },
-         "columns": [
-             { "data": "idUsuario", "visible": false, "searchable": false },
-             {
-                 "data": "urlFoto", render: function (data) {
-                     return `<img style="heigth:60px"src=${data}class="rounded mx-auto d-block"/>`
+        "ajax": {
+            "url": '/Usuario/Lista',
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+            { "data": "idUsuario", "visible": false, "searchable": false },
+            {
+                "data": "urlFoto", render: function (data) {
+                    return `<img style="heigth:60px"src=${data}class="rounded mx-auto d-block"/>`
 
-                 }
-             },
-             { "data": "nombre" },
-             { "data": "correo" },
-             { "data": "telefono" },
-             { "data": "nombreROl" },
-             {
-                 "data": "esActivo", render: function (data) {
-                     if (data == 1)
-                         return '<span class="badge badge-info">Activo</span>';
-                     else
-                         return '<span class="badge badge-danger">No Activo</span>';
+                }
+            },
+            { "data": "nombre" },
+            { "data": "correo" },
+            { "data": "telefono" },
+            { "data": "nombreROl" },
+            {
+                "data": "esActivo", render: function (data) {
+                    if (data == 1)
+                        return '<span class="badge badge-info">Activo</span>';
+                    else
+                        return '<span class="badge badge-danger">No Activo</span>';
 
-                 }
-             },
-             {
-                 "defaultContent": '<button class="btn btn-primary btn-editar btn-sm mr-2"><i class="fas fa-pencil-alt"></i></button>' +
-                     '<button class="btn btn-danger btn-eliminar btn-sm"><i class="fas fa-trash-alt"></i></button>',
-                 "orderable": false,
-                 "searchable": false,
-                 "width": "80px"
-             }
-         ],
-         order: [[0, "desc"]],
+                }
+            },
+            {
+                "defaultContent": '<button class="btn btn-primary btn-editar btn-sm mr-2"><i class="fas fa-pencil-alt"></i></button>' +
+                    '<button class="btn btn-danger btn-eliminar btn-sm"><i class="fas fa-trash-alt"></i></button>',
+                "orderable": false,
+                "searchable": false,
+                "width": "80px"
+            }
+        ],
+        order: [[0, "desc"]],
         dom: "Bfrtip",
         buttons: [
             {
@@ -76,7 +76,7 @@ $(document).ready(function () {
                 title: '',
                 filename: 'Reporte Usuarios',
                 exportOptions: {
-                    columns: [2,3,4,5,6]
+                    columns: [2, 3, 4, 5, 6]
                 }
             }, 'pageLength'
         ],
@@ -84,6 +84,8 @@ $(document).ready(function () {
             url: "https://cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"
         },
     });
+
+})
 
 
 
@@ -107,8 +109,6 @@ $("#btnNuevo").click(function () {
 })
 
 $("#btnGuardar").click(function () {
-
-    
 
     const inputs = $("input.input-validar").serializeArray();
     const inputs_sin_valor = inputs.filter((item) => item.value.trim() == "")
@@ -140,6 +140,7 @@ $("#btnGuardar").click(function () {
     $("#modalData").find("div.modal-content").LoadingOverlay("show");
 
     if (modelo.idUsuario == 0) {
+
         fetch("/Usuario/Crear", {
             method: "POST",
             body: formData
@@ -178,13 +179,13 @@ $("#btnGuardar").click(function () {
             if (responseJson.estado) {
 
                 tablaData.row(filaSeleccionada).data(responseJson.objeto).draw(false);
-                filaSeleccionada = null
+                filaSeleccionada = null;
                 $("#modalData").modal("hide")
                 swal("Listo!", "El usuario fue modificado", "success")
 
 
             } else {
-                swal("Lo sentimos", responseJson.mensaje, "error")
+                swal("Lo sffffentimos", responseJson.mensaje, "error")
             }
         })
 
@@ -203,6 +204,7 @@ $("#tbdata tbody").on("click", ".btn-editar", function () {
     }
 
     const data = tablaData.row(filaSeleccionada).data();
+    console.log(data)
 
     mostrarModal(data);
 })
@@ -264,4 +266,3 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
     )
 })
 
-})

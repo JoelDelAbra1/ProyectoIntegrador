@@ -18,7 +18,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             CreateMap<Usuario, VMUsuario>()
                 .ForMember(destino =>
                 destino.EsActivo,
-                opt => opt.MapFrom(Origen => Origen.EsActivo == true ? 1 : 0)
+                opt => opt.MapFrom(origen => origen.EsActivo == true ? 1 : 0)
                 )
                 .ForMember(destino =>
                 destino.NombreROl,
