@@ -67,10 +67,14 @@ namespace SistemaVenta.AplicacionWeb.Controllers
                     nombreLogo = string.Concat(nombre_en_codigo, extencion);
                     logoStream = logo.OpenReadStream();
 
-                    Negocio negocio_editado = await _negocioService.GuardarCambios(_mapper.Map<Negocio>(vMNegocio), logoStream , nombreLogo);
-
-                    vMNegocio = _mapper.Map<VMNegocio>(negocio_editado);
+                  
                 }
+
+                Negocio negocio_editado = await _negocioService.GuardarCambios(_mapper.Map<Negocio>(vMNegocio),
+                      logoStream, nombreLogo);
+
+                vMNegocio = _mapper.Map<VMNegocio>(negocio_editado);
+
 
                 gResponse.Estado = true;
                 gResponse.Objeto = vMNegocio; // object o objeto

@@ -65,7 +65,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
             try
             {
-                modelo.IdUsuario = 1;
+                modelo.IdUsuario = 3;  /// Cambiar si es necesario
 
 
                 Venta venta_creada = await _ventaServicio.Registrar(_mapper.Map<Venta>(modelo));

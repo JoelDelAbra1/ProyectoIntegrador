@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Identity.Client;
+
 using SistemaVenta.BLL.Interfaces;
 using SistemaVenta.DAL.Interfaces;
 using SistemaVenta.Entity;
@@ -39,6 +40,7 @@ namespace SistemaVenta.BLL.Implementacion
             try
             {
                 Negocio negocio_encontrado = await _repositorio.Obtener(n => n.IdNegocio == 1);
+
                 negocio_encontrado.NumeroDocumento = entidad.NumeroDocumento;
                 negocio_encontrado.Nombre = entidad.Nombre;
                 negocio_encontrado.Correo = entidad.Correo;
@@ -47,9 +49,9 @@ namespace SistemaVenta.BLL.Implementacion
                 negocio_encontrado.PorcentajeImpuesto = entidad.PorcentajeImpuesto;
                 negocio_encontrado.SimboloMoneda = entidad.SimboloMoneda;
 
-                negocio_encontrado.NombreLogo = entidad.NombreLogo == "" ? NombreLogo : negocio_encontrado.NombreLogo;
+                negocio_encontrado.NombreLogo = negocio_encontrado.NombreLogo == "" ? NombreLogo : negocio_encontrado.NombreLogo;
 
-                if(Logo  != null)
+                if(Logo != null)
                 {
                     string urlLogo = await _firebaseService.SubirStorage(Logo, "carpeta_logo", negocio_encontrado.NombreLogo);
                     negocio_encontrado.UrlLogo = urlLogo;

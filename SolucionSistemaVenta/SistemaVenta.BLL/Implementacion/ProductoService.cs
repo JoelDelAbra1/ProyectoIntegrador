@@ -102,7 +102,7 @@ namespace SistemaVenta.BLL.Implementacion
 
                 bool respuesta = await _repositorio.Editar(producto_para_editar);
 
-                if (respuesta)
+                if (!respuesta)
                     throw new TaskCanceledException("No se pudo editar el producto");
 
                 Producto producto_editado = queryProducto.Include(c => c.IdCategoriaNavigation).First();
