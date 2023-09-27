@@ -1,5 +1,5 @@
 ﻿
-let tablaData;
+let tablaData
 
 $(document).ready(function(){
 

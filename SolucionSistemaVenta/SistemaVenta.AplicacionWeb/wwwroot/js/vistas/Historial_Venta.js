@@ -1,7 +1,7 @@
 ﻿
-const VISTA_BUSQUEDA ={
+const VISTA_BUSQUEDA = {
 
-    busquedaFecha:() => {
+    busquedaFecha: () => {
 
         $("#txtFechaInicio").val("")
         $("#txtFechaFin").val("")
@@ -9,14 +9,15 @@ const VISTA_BUSQUEDA ={
 
         $(".busqueda-fecha").show()
         $(".busqueda-venta").hide()
-    }, busquedaVenta:() => {
+    }, busquedaVenta: () => {
 
         $("#txtFechaInicio").val("")
         $("#txtFechaFin").val("")
         $("#txtNumeroVenta").val("")
 
         $(".busqueda-fecha").hide()
-        $(".busqueda-venta").Show()
+        $(".busqueda-venta").show()
+    }
 }
 
 $(document).ready(function(){
@@ -108,7 +109,7 @@ $("#btnBuscar").click(function (){
 })
 
 
-$("#tb venta tbody").on("click",".btn-info", function(){
+$("#tbventa tbody").on("click",".btn-info", function(){
 
     let d= $(this).data("venta")
 
@@ -116,8 +117,8 @@ $("#tb venta tbody").on("click",".btn-info", function(){
     $("#txtFechaRegistro").val(d.fechaRegistro)
     $("#txtNumVenta").val(d.numeroVenta)
     $("#txtUsuarioRegistro").val(d.usuario)
-    $("#txtTipoDocumento").val(d.tipoDocumentoCliente)
-    $("#txtDocumentoCliente").val(d.documetoCliente)
+    $("#txtTipoDocumento").val(d.tipoDocumentoVenta)
+    $("#txtDocumentoCliente").val(d.documentoCliente)
     $("#txtNombreCliente").val(d.nombreCliente)
     $("#txtSubTotal").val(d.subTotal)
     $("#txtIGV").val(d.impuestoTotal)
@@ -146,6 +147,6 @@ $("#tb venta tbody").on("click",".btn-info", function(){
                 $("#linkImprimir").attr("href",`/Venta/MostrarPDFVenta?numeroVenta=${d.numeroVenta}`)
   
 
-                $("#modalData").modal(show)
+                $("#modalData").modal("show")
 
 } )
