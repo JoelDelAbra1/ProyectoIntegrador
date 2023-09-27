@@ -9,9 +9,11 @@ using SistemaVenta.Entity;
 using SistemaVenta.BLL.Interfaces;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
+    [Authorize]
     public class ProductosController : Controller
     {
         private readonly IMapper _mapper;
