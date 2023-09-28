@@ -22,7 +22,7 @@ namespace SistemaVenta.BLL.Interfaces
 
         Task<bool> GuardarPerfil(Usuario entidad);
 
-        Task<bool> CambiarClave(int IdUsuario, string ClaveActual, String ClaveNueva);
+        Task<bool> CambiarClave(int IdUsuario, string ClaveActual, string ClaveNueva);
 
         Task<bool> RestablecerClave(string Correo, string UrlPlantillaCorreo);
 

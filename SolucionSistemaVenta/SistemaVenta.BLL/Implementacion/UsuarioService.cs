@@ -216,19 +216,20 @@ namespace SistemaVenta.BLL.Implementacion
             try
             {
                 Usuario usuario_encontrado = await _repositorio.Obtener(u => u.IdUsuario == IdUsuario);
-                if(usuario_encontrado == null)
+
+                if (usuario_encontrado == null)
                     throw new TaskCanceledException("El usuario no existe");
 
-                if(usuario_encontrado.Clave != _utilidadesService.ConvertirSha256(ClaveActual))
-                    throw new TaskCanceledException("La contraseña ingresada como actual no es correcta");
+                if (usuario_encontrado.Clave != _utilidadesService.ConvertirSha256(ClaveActual))
+                    throw new TaskCanceledException("La contraseña actual no es correcta");
 
-                usuario_encontrado.Clave = _utilidadesService.ConvertirSha256(ClaveActual);
+                usuario_encontrado.Clave = _utilidadesService.ConvertirSha256(ClaveNueva);
 
                 bool respuesta = await _repositorio.Editar(usuario_encontrado);
 
                 return respuesta;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw;
             }

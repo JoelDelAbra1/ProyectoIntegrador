@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ai4R/NTqvD8qeyfanxGefDGKNCs+9g6JPGPMT/2tTGk=",
+  "Hash": "+46LboxPHKzW1v281wpzmFNo0VLopKB32CXKga9gxHQ=",
   "Source": "SistemaVenta.AplicacionWeb",
   "BasePath": "_content/SistemaVenta.AplicacionWeb",
   "Mode": "Default",
@@ -338,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\vistas\\Historial_Venta.js"
+    },
+    {
+      "Identity": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js\\vistas\\Home_Perfil.js",
+      "SourceId": "SistemaVenta.AplicacionWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\",
+      "BasePath": "_content/SistemaVenta.AplicacionWeb",
+      "RelativePath": "js/vistas/Home_Perfil.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\vistas\\Home_Perfil.js"
     },
     {
       "Identity": "C:\\Users\\joeld\\source\\repos\\ProyectoIntegrador\\SolucionSistemaVenta\\SistemaVenta.AplicacionWeb\\wwwroot\\js\\vistas\\Negocio_Index.js",
