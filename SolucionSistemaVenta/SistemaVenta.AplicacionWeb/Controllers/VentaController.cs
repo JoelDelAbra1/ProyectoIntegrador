@@ -9,6 +9,7 @@ using SistemaVenta.Entity;
 using DinkToPdf;
 using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace SistemaVenta.AplicacionWeb.Controllers
 {
@@ -66,7 +67,14 @@ namespace SistemaVenta.AplicacionWeb.Controllers
 
             try
             {
-                modelo.IdUsuario = 3;  /// Cambiar si es necesario
+
+                ClaimsPrincipal claimUser = HttpContext.User;
+
+                string IdUsuario = claimUser.Claims
+                    .Where(c => c.Type == ClaimTypes.NameIdentifier)
+                    .Select(c => c.Value).SingleOrDefault();
+
+                modelo.IdUsuario = int.Parse(IdUsuario);  /// Cambiar si es necesario
 
 
                 Venta venta_creada = await _ventaServicio.Registrar(_mapper.Map<Venta>(modelo));
@@ -103,6 +111,7 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             var pdf = new HtmlToPdfDocument()
             {
                 GlobalSettings = new GlobalSettings()
+
                 {
                     PaperSize = PaperKind.A4,
                     Orientation = Orientation.Portrait,
