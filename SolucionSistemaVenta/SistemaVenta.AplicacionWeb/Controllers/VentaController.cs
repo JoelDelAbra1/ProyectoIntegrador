@@ -11,124 +11,111 @@ using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
-namespace SistemaVenta.AplicacionWeb.Controllers
+
+namespace SistemaVenta.ApplicationWeb.Controllers
 {
-    [Authorize]
-    public class VentaController : Controller
-    {
+	[Authorize]
+	public class VentaController : Controller
+	{
+		private readonly ITipoDocumentoVentaService _tipoDocumentoVentaService;
+		private readonly IVentaService _ventaServicio;
+		private readonly IMapper _mapper;
+		private readonly IConverter _converter;
 
-        private readonly ITipoDocumentoVentaService _tipoDocumentoVentaServicio;
-        private readonly IVentaService _ventaServicio;
-        private readonly IMapper _mapper;
-        private readonly IConverter _converter;
+		public VentaController(ITipoDocumentoVentaService tipoDocumentoVentaService, IVentaService ventaService, IMapper mapper, IConverter converter)
+		{
+			_tipoDocumentoVentaService = tipoDocumentoVentaService;
+			_ventaServicio = ventaService;
+			_mapper = mapper;
+			_converter = converter;
+		}
 
-        public VentaController(ITipoDocumentoVentaService tipoDocumentoVentaServicio,
-            IVentaService ventaServicio,
-            IMapper mapper,
-            IConverter converter
-            )
-        {
-            _tipoDocumentoVentaServicio = tipoDocumentoVentaServicio;
-            _ventaServicio = ventaServicio;
-            _mapper = mapper;
-            _converter = converter;
+		public IActionResult NuevaVenta()
+		{
+			return View();
+		}
 
+		public IActionResult HistorialVenta()
+		{
+			return View();
+		}
 
-        }
+		[HttpGet]
+		public async Task<IActionResult> ListaTipoDocumentoVenta()
+		{
+			List<VMTipoDocumentoVenta> vmListaTipoDocumentos = _mapper.Map<List<VMTipoDocumentoVenta>>(await _tipoDocumentoVentaService.Lista());
+			return StatusCode(StatusCodes.Status200OK, vmListaTipoDocumentos);
+		}
 
-        public IActionResult NuevaVenta()
-        {
-            return View();
-        }
-        public IActionResult HistorialVenta()
-        {
-            return View();
-        }
+		[HttpGet]
+		public async Task<IActionResult> ObtenerProductos(string busqueda)
+		{
+			List<VMProducto> vmListaProductos = _mapper.Map<List<VMProducto>>(await _ventaServicio.ObtenerProductos(busqueda));
+			return StatusCode(StatusCodes.Status200OK, vmListaProductos);
+		}
 
-        [HttpGet]
-        public async Task<IActionResult> ListaTipoDocumentoVenta()
-        {
-            List<VMTipoDocumentoVenta> vmListaTipoDocumentos = _mapper.Map<List<VMTipoDocumentoVenta>>(await _tipoDocumentoVentaServicio.Lista());
+		[HttpPost]
+		public async Task<IActionResult> RegistrarVenta([FromBody] VMVenta modelo)
+		{
+			GenericResponse<VMVenta> gResponse = new GenericResponse<VMVenta>();
 
-            return StatusCode(StatusCodes.Status200OK, vmListaTipoDocumentos);
-        }
+			try
+			{
 
-        [HttpGet]
-        public async Task<IActionResult> ObtenerProductos(string busqueda)
-        {
-            List<VMProducto> vmListaProductos = _mapper.Map<List<VMProducto>>(await _ventaServicio.ObtenerProductos(busqueda));
-            return StatusCode(StatusCodes.Status200OK, vmListaProductos);
-        }
+				ClaimsPrincipal claimUser = HttpContext.User;
 
-        [HttpPost]
-        public async Task<IActionResult> RegistrarVenta([FromBody] VMVenta modelo)
-        {
-            GenericResponse<VMVenta> gResponse = new GenericResponse<VMVenta>();
+				string IdUsuario = claimUser.Claims
+					.Where(c => c.Type == ClaimTypes.NameIdentifier)
+					.Select(c => c.Value).SingleOrDefault();
 
-            try
-            {
-
-                ClaimsPrincipal claimUser = HttpContext.User;
-
-                string IdUsuario = claimUser.Claims
-                    .Where(c => c.Type == ClaimTypes.NameIdentifier)
-                    .Select(c => c.Value).SingleOrDefault();
-
-                modelo.IdUsuario = int.Parse(IdUsuario);  /// Cambiar si es necesario
+				modelo.IdUsuario = int.Parse(IdUsuario);  /// Cambiar si es necesario
 
 
-                Venta venta_creada = await _ventaServicio.Registrar(_mapper.Map<Venta>(modelo));
-                modelo = _mapper.Map<VMVenta>(venta_creada);
+				Venta venta_creada = await _ventaServicio.Registrar(_mapper.Map<Venta>(modelo));
+				modelo = _mapper.Map<VMVenta>(venta_creada);
 
-                gResponse.Estado = true;
-                gResponse.Objeto = modelo;
-
-
-            }
-            catch(Exception ex) 
-            {
-                gResponse.Estado = false;
-                gResponse.Mensaje = ex.Message;
-            }
-
-            return StatusCode(StatusCodes.Status200OK, gResponse);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Historial(string numeroVenta, string fechaInicio, string fechaFin)
-        {
-
-            List<VMVenta> vmHistorialVenta = _mapper.Map<List<VMVenta>>(await _ventaServicio.Historial(numeroVenta, fechaInicio, fechaFin));
- 
-                            return StatusCode(StatusCodes.Status200OK, vmHistorialVenta);
-        }
+				gResponse.Estado = true;
+				gResponse.Objeto = modelo;
 
 
-        public IActionResult MostrarPDFVenta(string numeroVenta)
-        {
-            string urlPlantillaVista = $"{this.Request.Scheme}://{this.Request.Host}//Plantilla/PDFVenta?numeroVenta={numeroVenta}";
+			}
+			catch (Exception ex)
+			{
+				gResponse.Estado = false;
+				gResponse.Mensaje = ex.Message;
+			}
 
-            var pdf = new HtmlToPdfDocument()
-            {
-                GlobalSettings = new GlobalSettings()
+			return StatusCode(StatusCodes.Status200OK, gResponse);
+		}
 
-                {
-                    PaperSize = PaperKind.A4,
-                    Orientation = Orientation.Portrait,
+		[HttpGet]
+		public async Task<IActionResult> Historial(string numeroVenta, string fechaInicio, string fechaFin)
+		{
+			List<VMVenta> vmHistorialVenta = _mapper.Map<List<VMVenta>>(await _ventaServicio.Historial(numeroVenta, fechaInicio, fechaFin));
+			return StatusCode(StatusCodes.Status200OK, vmHistorialVenta);
+		}
 
-                },
-                Objects =
-                {
-                    new ObjectSettings()
-                    {
-                        Page = urlPlantillaVista
-                    }
-                }
-            };
+		public IActionResult MostrarPDFVenta(string numeroVenta)
+		{
+			string urlPlantillaVista = $"{this.Request.Scheme}://{this.Request.Host}/Plantilla/PDFVenta?numeroVenta={numeroVenta}";
 
-            var archivoPDF = _converter.Convert(pdf);
+			var pdf = new HtmlToPdfDocument()
+			{
+				GlobalSettings = new GlobalSettings()
+				{
+					PaperSize = PaperKind.A4,
+					Orientation = Orientation.Portrait,
+				},
+				Objects = {
+					new ObjectSettings() {
+						Page = urlPlantillaVista
+					}
+				}
+			};
 
-            return File(archivoPDF, "application/pdf");
-        }
-    }
+			var archivoPDF = _converter.Convert(pdf);
+
+			return File(archivoPDF, "application/pdf");
+		}
+	}
 }
