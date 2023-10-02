@@ -42,7 +42,7 @@ $(document).ready(function () {
             { "data": "idUsuario", "visible": false, "searchable": false },
             {
                 "data": "urlFoto", render: function (data) {
-                    return `<img style="heigth:60px"src=${data}class="rounded mx-auto d-block"/>`
+                    return `<img style="height: 60px" src=${data} class="rounded mx-auto d-block" />`
 
                 }
             },

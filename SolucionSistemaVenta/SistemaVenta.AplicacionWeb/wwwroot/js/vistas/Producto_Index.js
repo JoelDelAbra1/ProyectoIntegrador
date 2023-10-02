@@ -35,7 +35,7 @@ $(document).ready(function () {
     tablaData = $('#tbdata').DataTable({
         responsive: true,
         "ajax": {
-            "url": '/Productos/Lista',
+            "url": '/Producto/Lista',
             "type": "GET",
             "datatype": "json"
         },
@@ -43,7 +43,7 @@ $(document).ready(function () {
             { "data": "idProducto", "visible": false, "searchable": false },
             {
                 "data": "urlImagen", render: function (data) {
-                    return `<img style="heigth:60px"src=${data}class="rounded mx-auto d-block"/>`
+                    return `<img style="height: 60px" src=${data} class="rounded mx-auto d-block" />`
 
                 }
             },
@@ -149,7 +149,7 @@ $("#btnGuardar").click(function () {
     $("#modalData").find("div.modal-content").LoadingOverlay("show");
 
     if (modelo.idProducto == 0) {
-        fetch("/Productos/Crear", {
+        fetch("/Producto/Crear", {
             method: "POST",
             body: formData
 
@@ -173,7 +173,7 @@ $("#btnGuardar").click(function () {
             })
 
     } else {
-        fetch("/Productos/Editar", {
+        fetch("/Producto/Editar", {
             method: "PUT",
             body: formData
 
@@ -247,7 +247,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
 
             if (respuesta) {
                 $(".showSweetAlert").LoadingOverlay("show");
-                fetch(`/Productos/Eliminar?IdProducto=${data.idProducto}`, {
+                fetch(`/Producto/Eliminar?IdProducto=${data.idProducto}`, {
                     method: "DELETE"
 
                 })
