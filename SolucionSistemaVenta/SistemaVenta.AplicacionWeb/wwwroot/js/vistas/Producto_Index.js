@@ -233,7 +233,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
     const data = tablaData.row(fila).data();
 
     swal({
-        title: "¿Estás seguro?",
+        title: "Estas seguro?",
         text: `Eliminar el producto "${data.descripcion}"`,
         type: "warning",
         showCancelButton: true,

@@ -48,7 +48,7 @@ $("#btnGuardarCambios").click(function () {
     }
 
     swal({
-        title: "¿Desea guardar los cambios?",
+        title: "Desea guardar los cambios?",
         type: "warning",
         showCancelButton: true,
         confirmButtonClass: "btn-primary",
@@ -133,7 +133,7 @@ $("#btnCambiarClave").click(function () {
 
             if (responseJson.estado) {
 
-                swal("Listo!", `Su contraseña fue actualizada`, "success")
+                swal("Listo!", `Actualizada`, "success")
 
 
                 $("input.input-validar").val("")

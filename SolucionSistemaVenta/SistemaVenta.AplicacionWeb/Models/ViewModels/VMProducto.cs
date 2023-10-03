@@ -20,7 +20,7 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 
         public string? UrlImagen { get; set; }
 
-        public decimal? Precio { get; set; }
+        public string? Precio { get; set; }
 
         public int? EsActivo { get; set; }
     }

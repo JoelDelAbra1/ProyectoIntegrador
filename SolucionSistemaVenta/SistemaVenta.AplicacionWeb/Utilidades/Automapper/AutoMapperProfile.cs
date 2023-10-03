@@ -43,13 +43,13 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             CreateMap<Negocio, VMNegocio>()
                 .ForMember(destino =>
                 destino.PorcentajeImpuesto,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.PorcentajeImpuesto.Value, new CultureInfo("es_PE")))
+                opt => opt.MapFrom(origen => Convert.ToString(origen.PorcentajeImpuesto.Value, new CultureInfo("en-US"))) //Funcionooo
                 );
 
             CreateMap<VMNegocio, Negocio>()
                 .ForMember(destino =>
                 destino.PorcentajeImpuesto,
-                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.PorcentajeImpuesto.Value, new CultureInfo("es_PE")))
+                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.PorcentajeImpuesto, new CultureInfo("en-US")))
                 );
 
             #endregion Negocio
@@ -83,7 +83,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
                 )
                 .ForMember(destino =>
                 destino.Precio,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("es-PE")))
+                opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("en-US")))
                 );
 
             CreateMap<VMProducto, Producto>()
@@ -97,7 +97,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
                )
                .ForMember(destino =>
                destino.Precio,
-               opt => opt.MapFrom(origen => Convert.ToDecimal(origen.Precio, new CultureInfo("es-PE")))
+               opt => opt.MapFrom(origen => Convert.ToDecimal(origen.Precio, new CultureInfo("en-US")))
                );
 
             #endregion Producto
@@ -122,11 +122,11 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
                 )
                 .ForMember(destino =>
                    destino.SubTotal,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.SubTotal.Value, new CultureInfo("es-PE")))
+                opt => opt.MapFrom(origen => Convert.ToString(origen.SubTotal.Value, new CultureInfo("en-US")))
                 )
                 .ForMember(destino =>
                    destino.ImpuestoTotal,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.ImpuestoTotal.Value, new CultureInfo("es-PE")))
+                opt => opt.MapFrom(origen => Convert.ToString(origen.ImpuestoTotal.Value, new CultureInfo("en-US")))
                 )
                 .ForMember(destino =>
                    destino.Total,
@@ -140,7 +140,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             CreateMap<VMVenta, Venta>()
                 .ForMember(destino =>
                    destino.SubTotal,
-                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.SubTotal, new CultureInfo("es-PE")))
+                opt => opt.MapFrom(origen => Convert.ToDecimal(origen.SubTotal, new CultureInfo("es-PE"))) //Checar
                 )
                 .ForMember(destino =>
                    destino.ImpuestoTotal,
@@ -158,7 +158,7 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             CreateMap<DetalleVenta, VMDetalleVenta>()
                 .ForMember(destino =>
                 destino.Precio,
-                opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("es-PE")))
+                opt => opt.MapFrom(origen => Convert.ToString(origen.Precio.Value, new CultureInfo("")))
                 )
                 .ForMember(destino =>
                 destino.Total,
