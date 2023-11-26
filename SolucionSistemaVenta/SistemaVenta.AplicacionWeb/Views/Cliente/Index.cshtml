@@ -53,10 +53,10 @@
 
     <!--  Modal-->
     <div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6>Detalle Usuario</h6>
+                    <h6>Detalle Cliente</h6>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -68,7 +68,7 @@
                             <div class="col-sm-8">
                                 <div class="form-row">
                                     <div class="form-group col-sm-6">
-                                        <label for="txtNombre">Nombre</label>
+                                        <label for="txtNombre">Nombre o Razón fiscal</label>
                                         <input type="text" class="form-control form-control-sm input-validar" id="txtNombre" name="Nombre">
                                     </div>
                                     <div class="form-group col-sm-6">
@@ -82,27 +82,31 @@
                                         <input type="text" class="form-control form-control-sm input-validar" id="txtTelefono" name="Telefono">
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="cboRol">Rol</label>
-                                        <select class="form-control form-control-sm" id="cboRol">
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="cboEstado">Estado</label>
-                                        <select class="form-control form-control-sm" id="cboEstado">
-                                            <option value="1">Activo</option>
-                                            <option value="0">No Activo</option>
-                                        </select>
+                                        <label for="txtRegimen">Regimen Fiscal</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtRegimen" name="Regimen">
                                     </div>
                                     <div class="form-group col-sm-6">
-                                        <label for="txtFoto">Foto</label>
-                                        <input class="form-control-file" type="file" id="txtFoto" />
+                                        <label for="txtUso">Uso de la factura</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtUso" name="Uso">
                                     </div>
+                                    
+                                        <div class="form-group col-sm-6">
+                                            <label for="txtRfc">RFC</label>
+                                            <input type="text" class="form-control form-control-sm input-validar" id="txtRfc" name="RFC">
+                                       
+                                   
                                 </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <img id="imgUsuario" style="max-width:200px;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" alt="Foto usuario">
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="cboTipo">Tipo persona</label>
+                                            <select class="form-control form-control-sm" id="cboTipo">
+                                                <option value="1">Moral</option>
+                                                <option value="0">Física</option>
+                                            </select>
+                                        </div>
+                                        
+                                    </div>
+                               
                             </div>
 
                         </div>
