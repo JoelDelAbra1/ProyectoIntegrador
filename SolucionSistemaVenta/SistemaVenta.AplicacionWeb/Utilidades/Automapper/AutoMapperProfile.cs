@@ -70,6 +70,19 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
 
             #endregion Categoria
 
+            #region Cliente
+            CreateMap<Cliente, VMCliente>()
+    .ForMember(destino => destino.Regimen, opt => opt.MapFrom(origen => origen.Regimen))
+    .ForMember(destino => destino.Rfc, opt => opt.MapFrom(origen => origen.Rfc))
+    .ForMember(destino => destino.CodigoPostal, opt => opt.MapFrom(origen => origen.CodigoPostal));
+
+            CreateMap<VMCliente, Cliente>()
+    .ForMember(destino => destino.Regimen, opt => opt.MapFrom(origen => origen.Regimen))
+    .ForMember(destino => destino.Rfc, opt => opt.MapFrom(origen => origen.Rfc))
+    .ForMember(destino => destino.CodigoPostal, opt => opt.MapFrom(origen => origen.CodigoPostal))
+    .ForMember(destino => destino.IdCliene, opt => opt.Ignore());
+            #endregion Cliente
+
             #region Producto
 
             CreateMap<Producto, VMProducto>()

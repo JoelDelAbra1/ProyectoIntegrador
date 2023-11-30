@@ -18,6 +18,8 @@ public partial class DbventaContext : DbContext
 
     public virtual DbSet<Categoria> Categoria { get; set; }
 
+    public virtual DbSet<Cliente> Clientes { get; set; }
+
     public virtual DbSet<Configuracion> Configuracions { get; set; }
 
     public virtual DbSet<DetalleVenta> DetalleVenta { get; set; }
@@ -40,7 +42,9 @@ public partial class DbventaContext : DbContext
 
     public virtual DbSet<Venta> Venta { get; set; }
 
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=(local);Database=DBVENTA;Integrated Security=true; Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -58,6 +62,34 @@ public partial class DbventaContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
                 .HasColumnName("fechaRegistro");
+        });
+
+        modelBuilder.Entity<Cliente>(entity =>
+        {
+            entity.HasKey(e => e.IdCliene);
+
+            entity.ToTable("Cliente");
+
+            entity.Property(e => e.IdCliene).ValueGeneratedNever();
+            entity.Property(e => e.CodigoPostal)
+                .HasMaxLength(10)
+                .IsFixedLength();
+            entity.Property(e => e.Correo)
+                .HasMaxLength(999)
+                .IsFixedLength();
+            entity.Property(e => e.NomRaz)
+                .HasMaxLength(500)
+                .IsFixedLength();
+            entity.Property(e => e.Regimen)
+                .HasMaxLength(999)
+                .IsFixedLength();
+            entity.Property(e => e.Rfc)
+                .HasMaxLength(15)
+                .IsFixedLength()
+                .HasColumnName("RFC");
+            entity.Property(e => e.Telefono)
+                .HasMaxLength(10)
+                .IsFixedLength();
         });
 
         modelBuilder.Entity<Configuracion>(entity =>
