@@ -1,12 +1,13 @@
 const MODELO_BASE = {
-    IdCliene: 0,
-    NomRaz: "",
-    Correo: "",
-    Telefono: "",
-    Regimen: "",
-    Rfc: "",
-    CodigoPostal: ""
+    idCliene: 0,
+    nomRaz: "",
+    correo: "",
+    telefono: "",
+    regimen: "",
+    rfc: "",
+    codigoPostal: ""
 }
+
 
 let tablaData;
 $(document).ready(function () {
@@ -55,6 +56,7 @@ $(document).ready(function () {
 })
 
 function mostrarModal(modelo = MODELO_BASE) {
+
     $("#txtId").val(modelo.idCliene)
     $("#txtNombre").val(modelo.nomRaz)
     $("#txtCorreo").val(modelo.correo)
@@ -85,16 +87,21 @@ $("#btnGuardar").click(function () {
 
 
     const modelo = structuredClone(MODELO_BASE);
-    modelo["idCategoria"] = parseInt($("#txtId").val())
-    modelo["descripcion"] = $("#txtDescripcion").val()
-    modelo["esActivo"] = $("#cboEstado").val()
+
+    modelo["idCliene"] = parseInt($("#txtId").val())
+    modelo["nomRaz"] = $("#txtNombre").val()
+    modelo["correo"] = $("#txtCorreo").val()
+    modelo["telefono"] = $("#txtTelefono").val()
+    modelo["regimen"] = $("#txtRegimen").val()
+    modelo["rfc"] = $("#txtRfc").val()
+    modelo["codigoPostal"] = $("#txtcodigoPostal").val()
 
  
 
     $("#modalData").find("div.modal-content").LoadingOverlay("show");
 
-    if (modelo.idCategoria == 0) {
-        fetch("/Categoria/Crear", {
+    if (modelo.idCliene == 0) {
+        fetch("/Cliente/Crear", {
             method: "POST",
             headers: {"Content-Type":"application/json; charset=utf-8" },
             body: JSON.stringify(modelo)
@@ -119,7 +126,7 @@ $("#btnGuardar").click(function () {
             })
 
     } else {
-        fetch("/Categoria/Editar", {
+        fetch("/Cliente/Editar", {
             method: "PUT",
             headers: {"Content-Type":"application/json; charset=utf-8" },
             body: JSON.stringify(modelo)
@@ -140,7 +147,7 @@ $("#btnGuardar").click(function () {
 
 
                 } else {
-                    swal("Lo sentimos", responseJson.mensaje, "error")
+                    swal("Lo dsasd", responseJson.mensaje, "error")
                 }
             })
 
@@ -196,7 +203,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
 
             if (respuesta) {
                 $(".showSweetAlert").LoadingOverlay("show");
-                fetch(`/Categoria/Eliminar?IdCategoria=${data.idCategoria}`, {
+                fetch(`/Cliente/Eliminar?idCliente=${data.idCliene}`, {
                     method: "DELETE"
 
                 })
@@ -209,7 +216,7 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
                         if (responseJson.estado) {
 
                             tablaData.row(fila).remove().draw()
-                            swal("Listo!", "La cateogria fue eliminada", "success")
+                            swal("Listo!", "El cliente fue eliminada", "success")
 
 
                         } else {

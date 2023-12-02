@@ -65,14 +65,21 @@ namespace SistemaVenta.AplicacionWeb.Controllers
             try
             {
                 Cliente cliente_editada = await _clienteServicio.Editar(_mapper.Map<Cliente>(modelo));
+                
+                
                 modelo = _mapper.Map<VMCliente>(cliente_editada);
-                gResponse.Estado = true;
-                gResponse.Objeto = modelo;
+                
+                    gResponse.Estado = true;
+                    gResponse.Objeto = modelo;
+                   
+                
+                //gResponse.Estado = true;
+                //gResponse.Objeto = modelo;
             }
             catch (Exception ex)
             {
                 gResponse.Estado = false;
-                gResponse.Mensaje = ex.Message;
+                gResponse.Mensaje = ex.Message.ToString();
             }
             return StatusCode(StatusCodes.Status200OK, gResponse);
         }

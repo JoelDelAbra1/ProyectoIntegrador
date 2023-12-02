@@ -266,8 +266,6 @@ C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Auth.dll
-C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Storage.dll
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\appsettings.json
 C:\Users\cegar\Source\Repos\JoelDelAbra1\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\SistemaVenta.AplicacionWeb.staticwebassets.runtime.json
@@ -1139,3 +1137,5 @@ C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\zh-Hans\System.ServiceModel.Federation.resources.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\zh-Hant\System.ServiceModel.Federation.resources.dll
 C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Auth.dll
+C:\Users\joeld\source\repos\ProyectoIntegrador\SolucionSistemaVenta\SistemaVenta.AplicacionWeb\bin\Debug\net6.0\Firebase.Storage.dll

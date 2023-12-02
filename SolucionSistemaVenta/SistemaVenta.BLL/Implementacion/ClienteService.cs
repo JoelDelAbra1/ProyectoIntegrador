@@ -42,17 +42,23 @@ namespace SistemaVenta.BLL.Implementacion
 
         }
 
-        public async Task<Cliente> Editar(Cliente cliente)
+        public async Task<Cliente> Editar(Cliente cliene)
         {
+
            try
             {
-                Cliente cliente_encontrado = await _repositorio.Obtener(c => c.IdCliene == cliente.IdCliene);
-                cliente_encontrado.NomRaz = cliente.NomRaz;
-                cliente_encontrado.Correo = cliente.Correo;
-                cliente_encontrado.Regimen = cliente.Regimen;
-                cliente_encontrado.Telefono = cliente.Telefono;
-                cliente_encontrado.Rfc = cliente.Rfc;
-                cliente_encontrado.CodigoPostal = cliente.CodigoPostal;
+                IQueryable<Cliente> query = await _repositorio.Consultar(c => c.IdCliene == cliene.IdCliene);
+
+                Cliente cliente_encontrado = query.FirstOrDefault();
+
+                cliente_encontrado.NomRaz = cliene.NomRaz;
+                cliente_encontrado.Correo = cliene.Correo;
+                cliente_encontrado.Regimen = cliene.Regimen;
+                cliente_encontrado.Telefono = cliene.Telefono;
+                cliente_encontrado.Rfc = cliene.Rfc;
+                cliente_encontrado.CodigoPostal = cliene.CodigoPostal;
+
+    
 
                 bool respuesta = await _repositorio.Editar(cliente_encontrado);
 

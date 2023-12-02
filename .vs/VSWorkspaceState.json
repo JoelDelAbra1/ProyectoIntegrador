@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SolucionSistemaVenta",
+    "\\SolucionSistemaVenta\\SistemaVenta.Entity"
   ],
-  "SelectedNode": "\\SolucionSistemaVenta.sln",
+  "SelectedNode": "\\SolucionSistemaVenta\\SistemaVenta.Entity",
   "PreviewInSolutionExplorer": false
 }

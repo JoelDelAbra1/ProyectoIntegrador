@@ -66,22 +66,23 @@ public partial class DbventaContext : DbContext
 
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.IdCliene);
-
+            entity.HasKey(e => e.IdCliene)
+          .HasName("PK__Cliene__885457EE40F3768D");
             entity.ToTable("Cliente");
+           
 
-            entity.Property(e => e.IdCliene).ValueGeneratedNever();
             entity.Property(e => e.CodigoPostal)
                 .HasMaxLength(10)
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasColumnName("codigoPostal");
             entity.Property(e => e.Correo)
-                .HasMaxLength(999)
+                .HasMaxLength(50)
                 .IsFixedLength();
             entity.Property(e => e.NomRaz)
-                .HasMaxLength(500)
+                .HasMaxLength(50)
                 .IsFixedLength();
             entity.Property(e => e.Regimen)
-                .HasMaxLength(999)
+                .HasMaxLength(10)
                 .IsFixedLength();
             entity.Property(e => e.Rfc)
                 .HasMaxLength(15)
@@ -264,6 +265,10 @@ public partial class DbventaContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("fechaRegistro");
             entity.Property(e => e.IdCategoria).HasColumnName("idCategoria");
+            entity.Property(e => e.Impuestos)
+                .HasMaxLength(100)
+                .IsFixedLength()
+                .HasColumnName("impuestos");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -275,7 +280,12 @@ public partial class DbventaContext : DbContext
             entity.Property(e => e.Precio)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("precio");
+            entity.Property(e => e.ProductoServico).HasColumnName("productoServico");
             entity.Property(e => e.Stock).HasColumnName("stock");
+            entity.Property(e => e.Unidad)
+                .HasMaxLength(100)
+                .IsFixedLength()
+                .HasColumnName("unidad");
             entity.Property(e => e.UrlImagen)
                 .HasMaxLength(500)
                 .IsUnicode(false)
