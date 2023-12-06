@@ -1,5 +1,26 @@
 ﻿let ValorImpuesto = 0;
 $(document).ready(function () {
+
+    fetch("/Cliente/Lista")
+        .then(response => {
+            return response.ok ? response.json() : Promise.reject(response);
+        })
+        .then(responseJson => {
+            // Clear existing options before appending new ones
+            $("#txtNombreCliente").empty();
+
+            if (responseJson.data && responseJson.data.length > 0) {
+                responseJson.data.forEach((item) => {
+                    $("#txtNombreCliente").append(
+                        $("<option>").val(item.idCliene).text(item.nomRaz.trim())
+                    );
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+
     fetch("/Venta/ListaTipoDocumentoVenta")
         .then(response => {
             return response.ok ? response.json() : Promise.reject(response);
@@ -191,7 +212,35 @@ function mostrarProductos_Precios() {
     $("#txtIGV").val(igv.toFixed(2));
     $("#txtTotal").val(total.toFixed(2));
 }
+$('#cboTipoDocumentoVenta').on('change', function () {
+    var selectedValue = $(this).val();
 
+    if (selectedValue === 'factura') {
+        // Agregar el contenido HTML cuando el valor es 'factura'
+        $('#cboTipoDocumentoVenta').after(`
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 bg-second-primary">
+                            <h6 class="m-0 font-weight-bold text-white">Cliente</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <input type="text" class="form-control form-control-sm" id="txtDocumentoCliente" placeholder="numero documento">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <select class="form-control form-control-sm" id="txtNombreCliente">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+    } else {
+        // Eliminar el contenido HTML cuando el valor no es 'factura'
+        $('#cboTipoDocumentoVenta').next('.card').remove();
+    }
+});
 $(document).on("click", "button.btn-eliminar", function () {
     const _idProducto = $(this).data("IdProducto");
 

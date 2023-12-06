@@ -27,11 +27,21 @@ public partial class Producto
 
     public DateTime? FechaRegistro { get; set; }
 
-    public int? ProductoServico { get; set; }
-
     public string? Unidad { get; set; }
+
+    public int? ProductoServicio { get; set; }
 
     public string? Impuestos { get; set; }
 
+    public decimal? ValorImpuesto { get; set; }
+
+    public string? TipoImpuesto { get; set; }
+
+    public decimal? Descuento { get; set; }
+
     public virtual Categoria? IdCategoriaNavigation { get; set; }
+
+    public virtual ProductoServicio? ProductoServicioNavigation { get; set; }
+
+    public virtual Unidade? UnidadNavigation { get; set; }
 }

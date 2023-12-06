@@ -58,12 +58,12 @@ $(document).ready(function () {
 function mostrarModal(modelo = MODELO_BASE) {
 
     $("#txtId").val(modelo.idCliene)
-    $("#txtNombre").val(modelo.nomRaz)
-    $("#txtCorreo").val(modelo.correo)
-    $("#txtTelefono").val(modelo.telefono)
-    $("#txtRegimen").val(modelo.regimen)
-    $("#txtRfc").val(modelo.rfc)
-    $("#txtcodigoPostal").val(modelo.codigoPostal)
+    $("#txtNombre").val(modelo.nomRaz.replace(/\s\s/g, ""))
+    $("#txtCorreo").val(modelo.correo.replace(/\s/g, ""))
+    $("#txtTelefono").val(modelo.telefono.replace(/\s/g, ""))
+    $("#txtRegimen").val(modelo.regimen == 0 ? $("#txtRegimen option:first").val() : modelo.regimen.replace(/\s/g, ""))
+    $("#txtRfc").val(modelo.rfc.replace(/\s/g, ""))
+    $("#txtcodigoPostal").val(modelo.codigoPostal.replace(/\s/g, ""))
 
     $("#modalData").modal("show")
 }

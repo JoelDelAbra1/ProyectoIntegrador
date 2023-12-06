@@ -8,6 +8,7 @@ using SistemaVenta.DAL.DBContext;
 using SistemaVenta.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using SistemaVenta.Entity;
 
 namespace SistemaVenta.DAL.Implementacion
 {

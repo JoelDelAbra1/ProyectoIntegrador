@@ -88,6 +88,9 @@ namespace SistemaVenta.BLL.Implementacion
                 producto_para_editar.Stock = entidad.Stock;
                 producto_para_editar.Precio = entidad.Precio;
                 producto_para_editar.EsActivo = entidad.EsActivo;
+                producto_para_editar.ProductoServicio = entidad.ProductoServicio;
+                producto_para_editar.Unidad = entidad.Unidad;
+                producto_para_editar.Impuestos = entidad.Impuestos;
 
                 if(producto_para_editar.NombreImagen == "")
                 {

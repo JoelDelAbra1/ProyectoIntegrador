@@ -23,5 +23,11 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
         public string? Precio { get; set; }
 
         public int? EsActivo { get; set; }
+
+        public int? ProductoServico { get; set; }
+
+        public string? Unidad { get; set; }
+
+        public string? Impuestos { get; set; }
     }
 }

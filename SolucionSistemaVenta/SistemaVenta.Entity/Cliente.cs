@@ -7,15 +7,17 @@ public partial class Cliente
 {
     public int IdCliene { get; set; }
 
-    public string NomRaz { get; set; } = null!;
+    public string? NomRaz { get; set; }
 
-    public string Correo { get; set; } = null!;
+    public string? Telefono { get; set; }
 
-    public string Telefono { get; set; } = null!;
+    public string? Regimen { get; set; }
 
-    public string Regimen { get; set; } = null!;
+    public string? Rfc { get; set; }
 
-    public string Rfc { get; set; } = null!;
+    public string? CodigoPostal { get; set; }
 
-    public string CodigoPostal { get; set; } = null!;
+    public string? Correo { get; set; }
+
+    public virtual RegimenFiscal? RegimenNavigation { get; set; }
 }

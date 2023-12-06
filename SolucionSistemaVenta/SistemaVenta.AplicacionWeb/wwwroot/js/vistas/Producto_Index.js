@@ -8,6 +8,10 @@ const MODELO_BASE = {
     urlImagen: "",
     precio: 0,
     esActivo: 1,
+    productoServico: "" ,
+    unidad: "",
+    impuestos: "",
+descripcion: ""
 
 }
 
@@ -101,6 +105,10 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#cboEstado").val(modelo.esActivo)
     $("#txtImagen").val("")
     $("#imgProducto").attr("src", modelo.urlImagen)
+    $("#cboProdSer").val(modelo.productoServico)
+    $("#cboUnidad").val(modelo.unidad == null ? $("#cboUnidad").prop("selectedIndex", -1) : modelo.unidad.replace(/\s/g, ""))
+    $("#cboImpuestos").val(modelo.impuestos == null ? $("#cboImpuestos").prop("selectedIndex",-1) : modelo.impuestos.replace(/\s/g, ""))
+
 
 
     $("#modalData").modal("show")
@@ -137,6 +145,10 @@ $("#btnGuardar").click(function () {
     modelo["stock"] = $("#txtStock").val()
     modelo["precio"] = $("#txtPrecio").val()
     modelo["esActivo"] = $("#cboEstado").val()
+    modelo["productoServico"] = $("#cboProdSer").val()
+    modelo["unidad"] = $("#cboUnidad").val()
+    modelo["impuestos"] = $("#cboImpuestos").val() 
+
 
 
     const inputFoto = document.getElementById("txtImagen")
