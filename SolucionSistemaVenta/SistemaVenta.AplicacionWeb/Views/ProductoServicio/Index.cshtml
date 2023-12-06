@@ -1,0 +1,260 @@
+﻿
+@{
+    ViewData["Title"] = "Productos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Estilos{
+    <!-- ============================================================
+        =ESTILOS PARA ESTA PAGINA
+        ===============================================================-->
+    <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
+}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 bg-second-primary">
+            <h6 class="m-0 font-weight-bold text-white">Lista de Productos</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <button class="btn btn-success" id="btnNuevo"><i class="fas fa-plus-circle"></i> Nuevo Producto</button>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered" id="tbdata" cellspacing="0" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Imagen</th>
+                                <th>Codigo Barra</th>
+                                <th>Marca</th>
+                                <th>Descripcion</th>
+                                <th>Categoria</th>
+                                <th>Stock</th>
+                                <th>Precio</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Modal-->
+    <div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Detalle Producto</h6>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="hidden" value="0" id="txtId">
+                        <div class="row">
+                            <div class="col-sm-12
+">
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtCodigoBarra">Codigo Barra</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtCodigoBarra" name="Codigo Barra">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtMarca">Marca</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtMarca" name="Marca">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="txtDescripcion">Descripcion</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtDescripcion" name="Descripcion">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="cboCategoria">Categoria</label>
+                                        <select class="form-control form-control-sm" id="cboCategoria">
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtStock">Stock</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtStock" name="Stock">
+                                    </div>
+                                    </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtPrecio">Precio</label>
+                                        <input type="text" class="form-control form-control-sm input-validar" id="txtPrecio" name="Precio">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="cboEstado">Estado</label>
+                                        <select class="form-control form-control-sm" id="cboEstado">
+                                            <option value="1">Activo</option>
+                                            <option value="0">No Activo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="cboProdSer">Producto o servicio</label>
+                                           <select class="form-control form-control-sm" id="cboProdSer">
+    <option value="01010101">No existe en el catálogo</option>
+    <option value="10101500">Animales vivos de granja</option>
+    <option value="10101501">Gatos vivos</option>
+    <option value="10101502">Perros</option>
+    <option value="10101504">Visón</option>
+    <option value="10101505">Ratas</option>
+    <option value="10101506">Caballos</option>
+    <option value="10101507">Ovejas</option>
+    <option value="10101508">Cabras</option>
+    <option value="10101509">Asnos</option>
+    <option value="10101510">Ratones</option>
+    <option value="10101511">Cerdos</option>
+    <option value="10101512">Conejos</option>
+    <option value="10101513">Cobayas o conejillos de indias</option>
+    <option value="10101514">Primates</option>
+    <option value="10101515">Armadillos</option>
+    <option value="10101516">Ganado vacuno</option>
+    <option value="10101517">Camellos</option>
+    <option value="10101600">Pájaros y aves de corral vivos</option>
+    <option value="10101601">Pollos vivos</option>
+    <option value="10101602">Patos vivos</option>
+    <option value="10101603">Pavos vivos</option>
+    <option value="10101604">Gansos vivos</option>
+    <option value="10101605">Faisanes vivos</option>
+    <option value="10101700">Peces vivos</option>
+    <option value="10101701">Salmones vivos</option>
+    <option value="10101702">Trucha viva</option>
+    <option value="10101703">Tilapia viva</option>
+    <option value="10101704">Carpa viva</option>
+    <option value="10101705">Anguilas vivas</option>
+    <option value="10101800">Mariscos e invertebrados acuáticos vivos</option>
+    <option value="10101801">Camarón vivo</option>
+    <option value="10101802">Almejas vivas</option>
+</select>
+
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="cboImpuestos">Impuestos</label>
+                                            <select class="form-control form-control-sm" id="cboImpuestos">
+    <option value="01">No objeto de impuesto.</option>
+    <option value="02">Sí objeto de impuesto.</option>
+    <option value="03">Sí objeto del impuesto y no obligado al desglose.</option>
+    <option value="04">Sí objeto del impuesto y no causa impuesto.</option>
+</select>
+
+                                        </div>
+                                    </div>
+                                     <div class="form-row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="cboUnidad">Unidad</label>
+                                           <select class="form-control form-control-sm" id="cboUnidad">
+    <option value="18">Tambores de cincuenta y cinco galones (EUA)</option>
+    <option value="19">Camión cisterna</option>
+    <option value="26">Tonelada real</option>
+    <option value="29">Libra por mil pies cuadrados</option>
+    <option value="30">Día de potencia de caballos por tonelada métrica de aire seco</option>
+    <option value="31">Pescar</option>
+    <option value="32">Kilogramo por tonelada métrica seca del aire</option>
+    <option value="36">Pie cúbico por minuto por pie cuadrado</option>
+    <option value="44">Bolsa a granel de quinientos kilos</option>
+    <option value="45">Bolsa a granel de trescientos kilos</option>
+    <option value="46">Bolsa a granel de cincuenta libras</option>
+    <option value="47">Bolso de cincuenta libras</option>
+    <option value="48">Carga masiva</option>
+    <option value="53">Kilogramo teórico</option>
+    <option value="54">Tonelada teórica (UK)</option>
+    <option value="62">Por ciento por 1000 horas</option>
+    <option value="63">Tasa de fracaso en el tiempo</option>
+    <option value="64">Libra por pulgada cuadrada, calibre</option>
+    <option value="66">Oersted</option>
+    <option value="69">Escala específica de prueba</option>
+    <option value="1">Activo</option>
+    <option value="0">No Activo</option>
+</select>
+
+                                        </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtValorImp">Valor Impuesto</label>
+                                        <input type="number" min="0" value="0.00" step="1.00" class="form-control form-control-sm input-validar" id="txtValorImp" name="ValorImpuesto">
+                                    </div>
+                                    
+</div>
+
+                                <div class="form-row">
+                                    
+                                   
+                                    <div class="form-group col-sm-6">
+                                        <label for="cboTipoImp">Tipo de impuesto</label>
+                                        <select class="form-control form-control-sm" id="cboTipoImp">
+                                            <option value="1">Trasladado</option>
+                                            <option value="0">Retenido</option>
+                                        </select>
+                                       
+
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="txtDescuento">Descuento</label>
+                                        <input type="number" min="0" value="0.00" step="1.00" class="form-control form-control-sm input-validar" id="txtDescuento" name="Descuetno">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="txtImagen">Imagen</label>
+                                        <input class="form-control-file" type="file" id="txtImagen" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <img id="imgProducto" style="max-width:200px;" src="" class="rounded mx-auto d-block" alt="...">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" type="button" id="btnGuardar">Guardar</button>
+                    <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section Scripts{
+    <!-- ============================================================
+    =SCRIPTS PARA ESTA PAGINA
+    ===============================================================-->
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+     <script src="~/js/vistas/Producto_Index.js"></script>
+    <!-- SOLO ES DE EJEMPLO - IGNORAR
+    <script src="~/js/vistas/datatables-demo.js"></script>-->
+}
+

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SistemaVenta.Entity;
 
-public partial class Unidade
+public partial class Unidades
 {
     public string CClaveUnidad { get; set; } = null!;
 

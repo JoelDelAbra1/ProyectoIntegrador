@@ -43,5 +43,5 @@ public partial class Producto
 
     public virtual ProductoServicio? ProductoServicioNavigation { get; set; }
 
-    public virtual Unidade? UnidadNavigation { get; set; }
+    public virtual Unidades? UnidadNavigation { get; set; }
 }

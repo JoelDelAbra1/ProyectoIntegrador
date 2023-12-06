@@ -43,7 +43,7 @@ public partial class DbventaContext : DbContext
 
     public virtual DbSet<TipoDocumentoVenta> TipoDocumentoVenta { get; set; }
 
-    public virtual DbSet<Unidade> Unidades { get; set; }
+    public virtual DbSet<Unidades> Unidades { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -413,7 +413,7 @@ public partial class DbventaContext : DbContext
                 .HasColumnName("fechaRegistro");
         });
 
-        modelBuilder.Entity<Unidade>(entity =>
+        modelBuilder.Entity<Unidades>(entity =>
         {
             entity.HasKey(e => e.CClaveUnidad).HasName("PK__Unidades__81D22EBB5576A85B");
 

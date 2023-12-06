@@ -3,6 +3,7 @@ using SistemaVenta.AplicacionWeb.Models.ViewModels;
 using SistemaVenta.Entity;
 using System.Globalization;
 using AutoMapper;
+using SistemaVenta.BLL.Implementacion;
 
 namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
 {
@@ -73,6 +74,19 @@ namespace SistemaVenta.AplicacionWeb.Utilidades.Automapper
             #region Cliente
             CreateMap<Cliente, VMCliente>().ReverseMap();
             #endregion Cliente
+
+            #region ProductoServicio
+            CreateMap<ProductoServicio, VMProductoServicio>().ReverseMap();
+            #endregion ProductoServicio
+
+            #region RegimenFiscal
+            CreateMap<RegimenFiscal, VMRegimenFiscal>().ReverseMap();
+
+            #endregion RegimenFiscal
+
+            #region Unidades
+            CreateMap<Unidades, VMUnidades>().ReverseMap();
+            #endregion Unidades
 
             #region Producto
 
