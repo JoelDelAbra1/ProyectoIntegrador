@@ -91,6 +91,9 @@ namespace SistemaVenta.BLL.Implementacion
                 producto_para_editar.ProductoServicio = entidad.ProductoServicio;
                 producto_para_editar.Unidad = entidad.Unidad;
                 producto_para_editar.Impuestos = entidad.Impuestos;
+                producto_para_editar.ValorImpuesto = entidad.ValorImpuesto;
+                producto_para_editar.TipoImpuesto = entidad.TipoImpuesto;
+                producto_para_editar.Descuento = entidad.Descuento;
 
                 if(producto_para_editar.NombreImagen == "")
                 {

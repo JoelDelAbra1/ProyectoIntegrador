@@ -14,4 +14,9 @@ public partial class Categoria
     public DateTime? FechaRegistro { get; set; }
 
     public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+
+    public static implicit operator Categoria(List<Categoria> v)
+    {
+        throw new NotImplementedException();
+    }
 }

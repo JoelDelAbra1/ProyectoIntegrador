@@ -24,10 +24,20 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 
         public int? EsActivo { get; set; }
 
-        public int? ProductoServico { get; set; }
+        public int? ProductoServicio { get; set; }
 
         public string? Unidad { get; set; }
 
         public string? Impuestos { get; set; }
+
+        public decimal? ValorImpuesto { get; set; }
+
+        public string? TipoImpuesto { get; set; }
+
+        public decimal? Descuento { get; set; }
+
+     
+      
+
     }
 }

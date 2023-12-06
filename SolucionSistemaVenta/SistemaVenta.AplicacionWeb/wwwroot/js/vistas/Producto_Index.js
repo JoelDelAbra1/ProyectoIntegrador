@@ -8,10 +8,14 @@ const MODELO_BASE = {
     urlImagen: "",
     precio: 0,
     esActivo: 1,
-    productoServico: "" ,
+    productoServicio: 0 ,
     unidad: "",
     impuestos: "",
-descripcion: ""
+    descripcion: "",
+    descuento: 0.0,
+    tipoImpuesto: "",
+    valorImpuesto: ""
+
 
 }
 
@@ -25,6 +29,7 @@ $(document).ready(function () {
         })
         .then(responseJson => {
             console.log(responseJson)
+
             if (responseJson.data.length > 0) {
                 responseJson.data.forEach((item) => {
                     $("#cboCategoria").append(
@@ -105,10 +110,12 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#cboEstado").val(modelo.esActivo)
     $("#txtImagen").val("")
     $("#imgProducto").attr("src", modelo.urlImagen)
-    $("#cboProdSer").val(modelo.productoServico)
+    $("#cboProdSer").val(modelo.productoServicio)
     $("#cboUnidad").val(modelo.unidad == null ? $("#cboUnidad").prop("selectedIndex", -1) : modelo.unidad.replace(/\s/g, ""))
     $("#cboImpuestos").val(modelo.impuestos == null ? $("#cboImpuestos").prop("selectedIndex",-1) : modelo.impuestos.replace(/\s/g, ""))
-
+    $("#txtValorImp").val(modelo.valorImpuesto)
+    $("#cboTipoImp").val(modelo.tipoImpuesto == null ? $("#cboTipoImp").prop("selectedIndex", -1) : modelo.tipoImpuesto.replace(/\s/g, ""))
+    $("#txtDescuento").val(modelo.descuento)
 
 
     $("#modalData").modal("show")
@@ -145,9 +152,12 @@ $("#btnGuardar").click(function () {
     modelo["stock"] = $("#txtStock").val()
     modelo["precio"] = $("#txtPrecio").val()
     modelo["esActivo"] = $("#cboEstado").val()
-    modelo["productoServico"] = $("#cboProdSer").val()
+    modelo["productoServicio"] = $("#cboProdSer").val()
     modelo["unidad"] = $("#cboUnidad").val()
     modelo["impuestos"] = $("#cboImpuestos").val() 
+    modelo["valorImpuesto"] = $("#txtValorImp").val()
+    modelo["tipoImpuesto"] = $("#cboTipoImp").val()
+    modelo["descuento"] = $("#txtDescuento").val()
 
 
 
