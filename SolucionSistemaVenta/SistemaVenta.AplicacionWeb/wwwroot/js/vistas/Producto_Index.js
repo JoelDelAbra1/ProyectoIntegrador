@@ -12,7 +12,7 @@ const MODELO_BASE = {
     unidad: "",
     impuestos: "",
     descripcion: "",
-    descuento: 0.0,
+    descuento: "",
     tipoImpuesto: "",
     valorImpuesto: ""
 
@@ -34,6 +34,44 @@ $(document).ready(function () {
                 responseJson.data.forEach((item) => {
                     $("#cboCategoria").append(
                         $("<option>").val(item.idCategoria).text(item.descripcion)
+                    )
+                })
+            }
+
+        })
+
+
+    fetch("/ProductoServicio/Lista")
+        .then(response => {
+            return response.ok ? response.json() : Promise.reject(response);
+
+        })
+        .then(responseJson => {
+            console.log(responseJson)
+
+            if (responseJson.data.length > 0) {
+                responseJson.data.forEach((item) => {
+                    $("#cboProdSer").append(
+                        $("<option>").val(item.cClaveProdServ).text(item.descripcion)
+                    )
+                })
+            }
+
+        })
+
+
+    fetch("/Unidades/Lista")
+        .then(response => {
+            return response.ok ? response.json() : Promise.reject(response);
+
+        })
+        .then(responseJson => {
+            console.log(responseJson)
+
+            if (responseJson.data.length > 0) {
+                responseJson.data.forEach((item) => {
+                    $("#cboUnidad").append(
+                        $("<option>").val(item.cClaveUnidad).text(item.nombre)
                     )
                 })
             }
