@@ -80,7 +80,14 @@ $(document).ready(function () {
                         marca: item.marca,
                         categoria: item.nombreCategoria,
                         urlImagen: item.urlImagen,
-                        precio: parseFloat(item.precio)
+                        precio: parseFloat(item.precio),
+                        descuento: parseFloat(item.descuento),
+                        factorImpuesto: item.factorImpuesto,
+                        impuestos: item.impuestos,
+                        productoServicio: item.productoServicio,
+                        tipoImpuesto: item.tipoImpuesto,
+                        unidad: item.unidad,
+                        valorImpuesto: item.valorImpuesto
                     }
                     ))
                 };
@@ -126,6 +133,9 @@ let ProductosParaVenta = []; //array
 $("#cboBuscarProducto").on("select2:select", function (e) {
     const data = e.params.data;
 
+    console.log(data);
+     debugger;
+
     let producto_encontrado = ProductosParaVenta.filter(p => p.idProducto == data.id);
 
     if(producto_encontrado.length>0){
@@ -155,6 +165,7 @@ $("#cboBuscarProducto").on("select2:select", function (e) {
                 toastr.warning("", "La cantidad debe ser un número")
                 return false;
             }
+
             let producto = {
                 idProducto: data.id,
                 marca: data.marca,
@@ -162,9 +173,19 @@ $("#cboBuscarProducto").on("select2:select", function (e) {
                 categoria: data.categoria,
                 cantidad: parseInt(valor),
                 precio: data.precio.toString(),
-                total: (parseFloat(data.precio) * parseInt(valor)).toString()
+                descuento: data.descuento.toString(), 
+                totalDescuetno: (parseFloat(data.descuento) * parseInt(valor)).toString(),
+                total: ((parseFloat(data.precio) * parseInt(valor)) - (parseFloat(data.descuento) * parseInt(valor))).toString(),
+                factorImpuesto: data.factorImpuesto,
+                impuestos: data.impuestos,
+                productoServicio: data.productoServicio,
+                tipoImpuesto: data.tipoImpuesto,
+                unidad: data.unidad,
+                valorImpuesto: data.valorImpuesto
 
             }
+            console.log(producto);
+            debugger;
 
             ProductosParaVenta.push(producto);
             mostrarProductos_Precios();
@@ -181,6 +202,7 @@ function mostrarProductos_Precios() {
     let total = 0;
     let igv = 0;
     let subtotal = 0;
+    let descuento = 0;
     
     let porcentaje = ValorImpuesto / 100;
 
@@ -189,6 +211,7 @@ function mostrarProductos_Precios() {
     ProductosParaVenta.forEach((item) => {
 
         total = total + parseFloat(item.total);
+        descuento = descuento + parseFloat(item.totalDescuetno);
 
         $("#tbProducto tbody").append(
             $("<tr>").append(
@@ -200,15 +223,20 @@ function mostrarProductos_Precios() {
                 $("<td>").text(item.descripcionProducto),
                 $("<td>").text(item.cantidad),
                 $("<td>").text(item.precio),
+                $("<td>").text(item.descuento),
+                $("<td>").text(item.totalDescuetno),
                 $("<td>").text(item.total)
             )
         )
     })
 
-    subtotal = total / (1 + porcentaje);
+    subtotalAD = total / (1 + porcentaje) + descuento;
+    subtotal = subtotalAD - descuento;
     igv = total - subtotal;
 
     $("#txtSubTotal").val(subtotal.toFixed(2));
+    $('#txtSubTotalAD').val(subtotalAD.toFixed(2))
+    $("#txtDescuento").val(descuento.toFixed(2))
     $("#txtIGV").val(igv.toFixed(2));
     $("#txtTotal").val(total.toFixed(2));
 }
@@ -265,6 +293,8 @@ $("#btnTerminarVenta").click(function () {
         subTotal: $("#txtSubTotal").val(),
         impuestoTotal: $("#txtIGV").val(),
         total: $("#txtTotal").val(),
+        subtotalAD: $('#txtSubTotalAD').val(),
+        descuentos: $("#txtDescuento").val(),
         DetalleVenta: vmDetalleVenta
     }
 

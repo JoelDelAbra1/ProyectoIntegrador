@@ -36,8 +36,8 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 
         public decimal? Descuento { get; set; }
 
-     
-      
+        public string? FactorImpuesto { get; set; }
+
 
     }
 }

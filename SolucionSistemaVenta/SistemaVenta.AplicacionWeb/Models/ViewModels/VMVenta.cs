@@ -28,6 +28,10 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
 
         public string? FechaRegistro { get; set; }
 
+        public decimal? SubTotalAd { get; set; }
+
+        public decimal? Descuentos { get; set; }
+
         public virtual ICollection <VMDetalleVenta> DetalleVenta { get; set; }
 
 

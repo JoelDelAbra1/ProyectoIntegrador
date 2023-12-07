@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+
 using SistemaVenta.Entity;
 
 namespace SistemaVenta.DAL.DBContext;
-
 
 public partial class DbventaContext : DbContext
 {
@@ -137,8 +137,15 @@ public partial class DbventaContext : DbContext
                 .HasMaxLength(100)
                 .IsUnicode(false)
                 .HasColumnName("descripcionProducto");
+            entity.Property(e => e.Descuento)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("descuento");
             entity.Property(e => e.IdProducto).HasColumnName("idProducto");
             entity.Property(e => e.IdVenta).HasColumnName("idVenta");
+            entity.Property(e => e.Impuestos)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasColumnName("impuestos");
             entity.Property(e => e.MarcaProducto)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -146,9 +153,21 @@ public partial class DbventaContext : DbContext
             entity.Property(e => e.Precio)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("precio");
+            entity.Property(e => e.ProductoServicio).HasColumnName("productoServicio");
+            entity.Property(e => e.TipoImpuesto)
+                .HasMaxLength(20)
+                .IsUnicode(false)
+                .HasColumnName("tipoImpuesto");
             entity.Property(e => e.Total)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("total");
+            entity.Property(e => e.Unidad)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .HasColumnName("unidad");
+            entity.Property(e => e.ValorImpuesto)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("valorImpuesto");
 
             entity.HasOne(d => d.IdVentaNavigation).WithMany(p => p.DetalleVenta)
                 .HasForeignKey(d => d.IdVenta)
@@ -273,6 +292,10 @@ public partial class DbventaContext : DbContext
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("descuento");
             entity.Property(e => e.EsActivo).HasColumnName("esActivo");
+            entity.Property(e => e.FactorImpuesto)
+                .HasMaxLength(6)
+                .IsUnicode(false)
+                .HasColumnName("factorImpuesto");
             entity.Property(e => e.FechaRegistro)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
@@ -475,6 +498,9 @@ public partial class DbventaContext : DbContext
             entity.HasKey(e => e.IdVenta).HasName("PK__Venta__077D561470B6654B");
 
             entity.Property(e => e.IdVenta).HasColumnName("idVenta");
+            entity.Property(e => e.Descuentos)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("descuentos");
             entity.Property(e => e.DocumentoCliente)
                 .HasMaxLength(10)
                 .IsUnicode(false)
@@ -499,6 +525,9 @@ public partial class DbventaContext : DbContext
             entity.Property(e => e.SubTotal)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("subTotal");
+            entity.Property(e => e.SubTotalAd)
+                .HasColumnType("decimal(10, 2)")
+                .HasColumnName("subTotalAD");
             entity.Property(e => e.Total).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.IdTipoDocumentoVentaNavigation).WithMany(p => p.Venta)

@@ -18,5 +18,19 @@ namespace SistemaVenta.AplicacionWeb.Models.ViewModels
         public string? Precio { get; set; }
 
         public string? Total { get; set; }
+
+        public int? ProductoServicio { get; set; }
+
+        public string? Unidad { get; set; }
+
+        public string? Impuestos { get; set; }
+
+        public decimal? ValorImpuesto { get; set; }
+
+        public string? TipoImpuesto { get; set; }
+
+        public decimal? Descuento { get; set; }
+
+        public string? FactorImpuesto { get; set; }
     }
 }

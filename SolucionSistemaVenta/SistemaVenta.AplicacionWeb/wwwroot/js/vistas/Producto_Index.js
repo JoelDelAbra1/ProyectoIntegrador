@@ -14,7 +14,8 @@ const MODELO_BASE = {
     descripcion: "",
     descuento: "",
     tipoImpuesto: "",
-    valorImpuesto: ""
+    valorImpuesto: "",
+    factorImpuesto: ""
 
 
 }
@@ -154,6 +155,7 @@ function mostrarModal(modelo = MODELO_BASE) {
     $("#txtValorImp").val(modelo.valorImpuesto)
     $("#cboTipoImp").val(modelo.tipoImpuesto == null ? $("#cboTipoImp").prop("selectedIndex", -1) : modelo.tipoImpuesto.replace(/\s/g, ""))
     $("#txtDescuento").val(modelo.descuento)
+    $('#cboFactorImp').val(modelo.factorImpuesto == null ? $("#cboFactorImp").prop("selectedIndex", -1) : modelo.factorImpuesto.replace(/\s/g, ""))
 
 
     $("#modalData").modal("show")
@@ -196,6 +198,7 @@ $("#btnGuardar").click(function () {
     modelo["valorImpuesto"] = $("#txtValorImp").val()
     modelo["tipoImpuesto"] = $("#cboTipoImp").val()
     modelo["descuento"] = $("#txtDescuento").val()
+    modelo["factorImpuesto"] = $("#cboFactorImp").val()
 
 
 

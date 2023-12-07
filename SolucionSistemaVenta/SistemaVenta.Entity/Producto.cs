@@ -39,6 +39,8 @@ public partial class Producto
 
     public decimal? Descuento { get; set; }
 
+    public string? FactorImpuesto { get; set; }
+
     public virtual Categoria? IdCategoriaNavigation { get; set; }
 
     public virtual ProductoServicio? ProductoServicioNavigation { get; set; }
