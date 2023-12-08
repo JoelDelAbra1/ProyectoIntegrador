@@ -117,5 +117,8 @@ namespace SistemaVenta.ApplicationWeb.Controllers
 
 			return File(archivoPDF, "application/pdf");
 		}
+
+
+        
 	}
 }

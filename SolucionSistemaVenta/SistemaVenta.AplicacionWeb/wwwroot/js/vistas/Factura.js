@@ -422,3 +422,27 @@ $("#btnBuscar").click(function () {
             }
         })
 })
+
+
+
+
+
+$("#btnTerminarVenta").click(function () {
+    $.ajax({
+        url: "/Factura/Timbrar", // Ruta de la acción del controlador
+        type: "GET",
+        xhrFields: {
+            responseType: 'arraybuffer' // Configura la respuesta como un arraybuffer
+        },
+        success: function (data) {
+            var blob = new Blob([data], { type: "application/zip" });
+
+            // Usa FileSaver.js para descargar el archivo ZIP
+            saveAs(blob, "Archivo.zip");
+        },
+        error: function (error) {
+            console.error("Error en la llamada Ajax", error);
+            alert("Hubo un error al llamar al servidor");
+        }
+    });
+});
