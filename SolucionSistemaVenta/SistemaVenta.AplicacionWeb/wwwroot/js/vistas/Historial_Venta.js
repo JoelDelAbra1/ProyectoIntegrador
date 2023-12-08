@@ -123,6 +123,8 @@ $("#tbventa tbody").on("click",".btn-info", function(){
     $("#txtSubTotal").val(d.subTotal)
     $("#txtIGV").val(d.impuestoTotal)
     $("#txtTotal").val(d.total)
+    $("#txtSubTotalAD").val(d.subTotalAd)
+    $("#txtDescuento").val(d.descuentos)
 
 
     $("#tbProductos tbody").html("");
@@ -134,6 +136,7 @@ $("#tbventa tbody").on("click",".btn-info", function(){
                             $("<td>").text(item.descripcionProducto),
                             $("<td>").text(item.cantidad),
                             $("<td>").text(item.precio),
+                            $("<td>").text(item.descuento),
                             $("<td>").text(item.total),
                             
                         )
