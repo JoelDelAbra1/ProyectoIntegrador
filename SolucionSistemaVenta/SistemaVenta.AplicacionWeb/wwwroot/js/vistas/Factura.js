@@ -313,61 +313,11 @@ $(document).on("click", "button.btn-eliminar", function () {
     mostrarProductos_Precios();
 })      
 
-$("#btnTerminarVenta").click(function () {
-
-    if(ProductosParaVenta.length< 1){
-        toastr.warning("", "No hay productos para la venta")
-        return false;
-    }
-
-    const vmDetalleVenta = ProductosParaVenta;
-
-    const venta = {
-        idTipoDocumentoVenta: $("#cboTipoDocumentoVenta").val(),
-        documentoCliente: $("#txtDocumentoCliente").val(),
-        nombreCliente: $("#txtNombreCliente").val(),
-        subTotal: $("#txtSubTotal").val(),
-        impuestoTotal: $("#txtIGV").val(),
-        total: $("#txtTotal").val(),
-        subtotalAD: $('#txtSubTotalAD').val(),
-        descuentos: $("#txtDescuento").val(),
-        DetalleVenta: vmDetalleVenta
-    }
-
-    $("#btnTerminarVenta").LoadingOverlay("show");
-
-    fetch("/Venta/RegistrarVenta", {
-            method: "POST",
-            headers: { "Content-Type":"application/json; charset=utf-8" },
-            body: JSON.stringify(venta)
-    })
-        .then(response => {
-            $("#btnTerminarVenta").LoadingOverlay("hide");
-            return response.ok ? response.json() : Promise.reject(response);
-
-        })
-        .then(responseJson => {
-
-            if (responseJson.estado) {
-                ProductosParaVenta = [];
-                mostrarProductos_Precios();
-
-                $("txtDocumentoCliente").val("")
-                $("txtNombreCliente").val("")
-                $("#cboTipoDocumentoVenta").val($("#cboTipoDocumentoVenta option:first").val())
-
-                swal("Registrado!", `Numero de venta: ${responseJson.objeto.numeroVenta}`, "success")
-            } else {
-                swal("Lo Sentimos!", "No se pudo regitrar la venta", "error")
-            }
-
-
-        })
-})
 
 
 let concepto = '';
 $("#btnBuscar").click(function () {
+    concepto = '';
     if ($("#txtNumeroVenta").val().trim() == "") {
 
         toastr.warning("", "Debe ingresar el numero de venta")
@@ -377,10 +327,10 @@ $("#btnBuscar").click(function () {
 
     let numeroVenta = $("#txtNumeroVenta").val()
 
-    $(".card-body").find("div.row").LoadingOverlay("show");
+    $("#venta").find("div.row").LoadingOverlay("show");
     fetch(`/Venta/Historial?numeroVenta=${numeroVenta}`)
         .then(response => {
-            $(".card-body").find("div.row").LoadingOverlay("hide");
+            $("#venta").find("div.row").LoadingOverlay("hide");
 
             return response.ok ? response.json() : Promise.reject(response);
 
@@ -446,7 +396,7 @@ $("#btnTerminarVenta").click(function () {
 //                   <Comprobante><idLocal>380851462771</idLocal><version>4.0</version><serie /><folio>1</folio><formaPago>01</formaPago><condicionesDePago>CONTADO</condicionesDePago><subTotal>34.48</subTotal><descuento>0</descuento><moneda>MXN</moneda><Tipocambio>1.0</Tipocambio><exportacion>01</exportacion> <total>40.00</total><tipoDeComprobante>I</tipoDeComprobante><metodoPago>PUE</metodoPago><lugarExpedicion>64100</lugarExpedicion><confirmacion></confirmacion><Relacionado /><regimenFiscal>614</regimenFiscal><rfc>XAXX010101000</rfc><nombre>Comercioalizadora Juan</nombre><residenciaFiscal></residenciaFiscal><numRegIdTrib></numRegIdTrib><usoCFDI>S01</usoCFDI><domicilioFiscalReceptor>64000</domicilioFiscalReceptor><regimenFiscalReceptor>616</regimenFiscalReceptor><email></email><Concepto><claveProdServ>10101511</claveProdServ><noIdentificacion>6</noIdentificacion><cantidad>1</cantidad><claveUnidad>E48</claveUnidad><unidad>Unidad de servicio</unidad><descripcion>Aple Watch</descripcion><valorUnitario>40.00</valorUnitario><importe>40.00</importe><descuento>0</descuento><cuentaPredial>43027023</cuentaPredial><objetoImp>01</objetoImp></Concepto></Comprobante>
 
 
-
+    
 
 
 
@@ -463,12 +413,34 @@ $("#btnTerminarVenta").click(function () {
             responseType: 'arraybuffer'
         },
         success: function (data) {
-            var blob = new Blob([data], { type: "application/zip" });
-            saveAs(blob, "Archivo.zip");
+            var message = new TextDecoder("utf-8").decode(data);
+
+            // Verificar si el mensaje contiene una cadena específica de error
+            if (message.includes("Error al llamar al servicio web")) {
+                // Mostrar el mensaje de error en SweetAlert
+                swal("Error!", message, "error");
+            } else {
+                // Mostrar mensaje de éxito
+                swal("Facturación Exitosa",'' , "success");
+
+                // Descargar el archivo ZIP
+                var blob = new Blob([data], { type: "application/zip" });
+                saveAs(blob, "Archivo.zip");
+            }
+
+            // Limpiar el comprobante
+            comprobante = "";
+            console.log(comprobante);
         },
         error: function (error) {
             console.error("Error en la llamada Ajax", error);
             alert("Hubo un error al llamar al servidor");
+        },
+        complete: function () {
+            // Ocultar el indicador de carga en el contenedor "container-fluid"
+            
         }
     });
+    comprobante = "";
+    console.log("Se limpio" + comprobante);
 });

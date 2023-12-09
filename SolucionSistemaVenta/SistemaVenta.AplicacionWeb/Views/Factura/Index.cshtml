@@ -19,7 +19,7 @@
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
+    <div class = "mostrar">
     <div class="row">
         <div class="col-sm-12">
 
@@ -61,6 +61,19 @@
                                         <option value="99">Por definir</option>
                                     </select>
                                 </div>
+                               
+                                <div class="form-group col-sm-6">
+
+                                    <label for="tipoComprobante">Tipo de comprobante</label>
+                                    <select class="form-control form-control-sm" id="tipoComprobante">
+                                        <option value="I">Ingreso</option>
+                                        <option value="E">Egreso</option>
+                                        <option value="T">Traslado</option>
+                                        <option value="N">Nómina</option>
+                                        <option value="P">Pago</option>
+                                    </select>
+                                    
+                                </div>
                                 <div class="form-group col-sm-6">
 
                                     <label for="moneda">Moneda</label>
@@ -73,18 +86,6 @@
                                     <label for="tipoCambio">Tipo de cambio</label>
 
                                     <input type="text" value="1.0" class="form-control form-control-sm" aria-label="Small" aria-describedby="inputGroupSubTotal" id="tipoCambio" disabled>
-                                </div>
-                                <div class="form-group col-sm-6">
-
-                                    <label for="tipoComprobante">Tipo de comprobante</label>
-                                    <select class="form-control form-control-sm" id="tipoComprobante">
-                                        <option value="I">Ingreso</option>
-                                        <option value="E">Egreso</option>
-                                        <option value="T">Traslado</option>
-                                        <option value="N">Nómina</option>
-                                        <option value="P">Pago</option>
-                                    </select>
-                                    
                                 </div>
                                
                             </div>
@@ -103,7 +104,7 @@
                         <div class="card-header py-3 bg-second-primary">
                             <h6 class="m-0 font-weight-bold text-white">Cliente</h6>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body" id="venta">
                             <div class="form-row">
                                 <div class="form-group col-sm-12">
                                     <select class="form-control form-control-sm" id="txtNombreCliente">
@@ -261,6 +262,7 @@
             </div>
         </div>
     </div>
+        <div/>
             </div>
 
            

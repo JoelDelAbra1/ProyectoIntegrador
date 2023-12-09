@@ -23,6 +23,21 @@ const MODELO_BASE = {
 let tablaData;
 $(document).ready(function () {
 
+
+
+    $("#cboImpuestos").change(function () {
+        // Obtener el valor seleccionado
+        var selectedValue = $(this).val();
+
+        // Deshabilitar o habilitar los elementos según la opción seleccionada
+        if (selectedValue === "01") {
+            $("#txtValorImp, #cboTipoImp").prop("disabled", true);
+        } else {
+            $("#txtValorImp, #cboTipoImp").prop("disabled", false);
+        }
+        $("#cboImpuestos").trigger("change");
+    });
+
     fetch("/Categoria/Lista")
         .then(response => {
             return response.ok ? response.json() : Promise.reject(response);
@@ -252,7 +267,7 @@ $("#btnGuardar").click(function () {
                     tablaData.row(filaSeleccionada).data(responseJson.objeto).draw(false);
                     filaSeleccionada = null
                     $("#modalData").modal("hide")
-                    swal("Listo!", "El pradicto fue modificado", "success")
+                    swal("Listo!", "El producto fue modificado", "success")
 
 
                 } else {
@@ -336,3 +351,5 @@ $("#tbdata tbody").on("click", ".btn-eliminar", function () {
         }
     )
 })
+
+
