@@ -27,7 +27,7 @@ $(document).ready(function () {
             }
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
+           
         });
 
 
@@ -366,7 +366,7 @@ $("#btnTerminarVenta").click(function () {
 })
 
 
-
+let concepto = '';
 $("#btnBuscar").click(function () {
     if ($("#txtNumeroVenta").val().trim() == "") {
 
@@ -408,13 +408,12 @@ $("#btnBuscar").click(function () {
                                     $("<td>").text(detalle.precio),
                                     $("<td>").text(detalle.descuento),
                                     $("<td>").text(detalle.total),
-                                    $("<td>").append(
-                                        $("<button>").addClass("btn btn-info btn-sm").append(
-                                            $("<i>").addClass("fas fa-eye")
-                                        ).data("venta", venta)
-                                    )
+                                   
+                                    
                                 )
                             );
+                            concepto +=`<Concepto><claveProdServ>${detalle.productoServicio}</claveProdServ><noIdentificacion>${detalle.idProducto}</noIdentificacion><cantidad>${detalle.cantidad}</cantidad><claveUnidad>${detalle.unidad}</claveUnidad><unidad>HOla</unidad><descripcion>${detalle.descripcionProducto}</descripcion><valorUnitario>${detalle.precio}</valorUnitario><importe>${detalle.total}</importe><descuento>${detalle.descuento}</descuento><cuentaPredial>43027023</cuentaPredial><objetoImp>01</objetoImp></Concepto>`;
+                            console.log(concepto);
                         });
                     });
                 }
@@ -422,22 +421,49 @@ $("#btnBuscar").click(function () {
             }
         })
 })
+let comprobante = "";
+$("#btnTerminarVenta").click(function () {
+    const formaPago = $("#FormaPago").val();
+    let moneda = $("#moneda").val();
+    let tipocambio = $("#tipoCambio").val();
+    let tipocomporbante = $("#tipoComprobante").val();
+    let subTotal = $("#txtSubTotal").prop('value');
+    let descuetos = $("#txtDescuento").prop('value');
+    let total = $("#txtTotal").prop('value');
+   // let metodoPago = $("#metodoPago").val();
+
+    let regimenFiscal = $("#regimen").prop('value');
+    let rfc = $("#rfc").prop('value');
+    let nombre = $("#nombre").prop('value');
+    let codigoPostal = $("#codigoPostal").prop('value');
+
+    // Imprimir en la consola el valor de la variable dentro de las etiquetas XML
+    comprobante +=`<Comprobante><idLocal>${ 4234234+ Math.floor(Math.random() * 900000000000) + 10000000}</idLocal><version>4.0</version><serie /><folio>1</folio><formaPago>${formaPago}</formaPago><condicionesDePago>CONTADO</condicionesDePago><subTotal>${total}</subTotal><descuento>${descuetos}</descuento><moneda>${moneda}</moneda><Tipocambio>${tipocambio}</Tipocambio><exportacion>01</exportacion> <total>${total}</total><tipoDeComprobante>${tipocomporbante}</tipoDeComprobante><metodoPago>PUE</metodoPago><lugarExpedicion>64100</lugarExpedicion><confirmacion></confirmacion><Relacionado /><regimenFiscal>${regimenFiscal}</regimenFiscal><rfc>${rfc}</rfc><nombre>${nombre}</nombre><residenciaFiscal></residenciaFiscal><numRegIdTrib></numRegIdTrib><usoCFDI>S01</usoCFDI><domicilioFiscalReceptor>${codigoPostal}</domicilioFiscalReceptor><regimenFiscalReceptor>616</regimenFiscalReceptor><email></email>`;
+    comprobante += concepto;
+    comprobante += `</Comprobante>`;
+
+   //comprobante = '<Comprobante><idLocal>052354524587</idLocal><version>4.0</version><serie/><folio>1</folio><formaPago>01</formaPago><condicionesDePago>CONTADO</condicionesDePago><subTotal>681</subTotal><descuento>0</descuento><moneda>MXN</moneda><tipoCambio>1.00</tipoCambio><exportacion>01</exportacion><total>681</total><tipoDeComprobante>I</tipoDeComprobante><metodoPago>PUE</metodoPago><lugarExpedicion>64000</lugarExpedicion><confirmacion></confirmacion><Relacionado/><regimenFiscal>606</regimenFiscal><rfc>XAXX010101000</rfc><nombre>PUBLICO GENERAL</nombre><residenciaFiscal></residenciaFiscal><numRegIdTrib></numRegIdTrib><usoCFDI>S01</usoCFDI><domicilioFiscalReceptor>64000</domicilioFiscalReceptor><regimenFiscalReceptor>616</regimenFiscalReceptor><email></email><Concepto><claveProdServ>93161700</claveProdServ><noIdentificacion>5101</noIdentificacion><cantidad>1</cantidad><claveUnidad>E48</claveUnidad><unidad>Unidad de servicio</unidad><descripcion>43-027-023 PAGO DE ISAI FOLIO: 2022000979</descripcion><valorUnitario>681</valorUnitario><importe>681</importe><descuento>0</descuento><cuentaPredial>43027023</cuentaPredial><objetoImp>01</objetoImp></Concepto></Comprobante>';
+//                   <Comprobante><idLocal>380851462771</idLocal><version>4.0</version><serie /><folio>1</folio><formaPago>01</formaPago><condicionesDePago>CONTADO</condicionesDePago><subTotal>34.48</subTotal><descuento>0</descuento><moneda>MXN</moneda><Tipocambio>1.0</Tipocambio><exportacion>01</exportacion> <total>40.00</total><tipoDeComprobante>I</tipoDeComprobante><metodoPago>PUE</metodoPago><lugarExpedicion>64100</lugarExpedicion><confirmacion></confirmacion><Relacionado /><regimenFiscal>614</regimenFiscal><rfc>XAXX010101000</rfc><nombre>Comercioalizadora Juan</nombre><residenciaFiscal></residenciaFiscal><numRegIdTrib></numRegIdTrib><usoCFDI>S01</usoCFDI><domicilioFiscalReceptor>64000</domicilioFiscalReceptor><regimenFiscalReceptor>616</regimenFiscalReceptor><email></email><Concepto><claveProdServ>10101511</claveProdServ><noIdentificacion>6</noIdentificacion><cantidad>1</cantidad><claveUnidad>E48</claveUnidad><unidad>Unidad de servicio</unidad><descripcion>Aple Watch</descripcion><valorUnitario>40.00</valorUnitario><importe>40.00</importe><descuento>0</descuento><cuentaPredial>43027023</cuentaPredial><objetoImp>01</objetoImp></Concepto></Comprobante>
 
 
 
+
+
+
+    console.log(comprobante);
+});
 
 
 $("#btnTerminarVenta").click(function () {
     $.ajax({
-        url: "/Factura/Timbrar", // Ruta de la acción del controlador
+        url: "/Factura/Timbrar",
         type: "GET",
+        data: { comprobante: comprobante },
         xhrFields: {
-            responseType: 'arraybuffer' // Configura la respuesta como un arraybuffer
+            responseType: 'arraybuffer'
         },
         success: function (data) {
             var blob = new Blob([data], { type: "application/zip" });
-
-            // Usa FileSaver.js para descargar el archivo ZIP
             saveAs(blob, "Archivo.zip");
         },
         error: function (error) {
